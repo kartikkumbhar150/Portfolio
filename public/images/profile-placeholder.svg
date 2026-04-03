@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 533" fill="none">
+  <rect width="400" height="533" fill="#020000"/>
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" style="stop-color:#ff1a1a;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:transparent;stop-opacity:0"/>
+    </radialGradient>
+  </defs>
+  <rect width="400" height="533" fill="url(#glow)"/>
+  
+  <!-- HUD elements -->
+  <line x1="20" y1="20" x2="60" y2="20" stroke="#ff1a1a" stroke-width="2"/>
+  <line x1="20" y1="20" x2="20" y2="60" stroke="#ff1a1a" stroke-width="2"/>
+  
+  <line x1="380" y1="20" x2="340" y2="20" stroke="#ff1a1a" stroke-width="2"/>
+  <line x1="380" y1="20" x2="380" y2="60" stroke="#ff1a1a" stroke-width="2"/>
+  
+  <line x1="20" y1="513" x2="60" y2="513" stroke="#ff1a1a" stroke-width="2"/>
+  <line x1="20" y1="513" x2="20" y2="473" stroke="#ff1a1a" stroke-width="2"/>
+  
+  <line x1="380" y1="513" x2="340" y2="513" stroke="#ff1a1a" stroke-width="2"/>
+  <line x1="380" y1="513" x2="380" y2="473" stroke="#ff1a1a" stroke-width="2"/>
+
+  <!-- Center abstract red structure -->
+  <circle cx="200" cy="200" r="100" fill="none" stroke="#ff1a1a" stroke-width="0.5" stroke-dasharray="4 4" opacity="0.6"/>
+  <circle cx="200" cy="200" r="80" fill="none" stroke="#ff1a1a" stroke-width="1" opacity="0.3"/>
+  <circle cx="200" cy="200" r="40" fill="#ff1a1a" opacity="0.1"/>
+  
+  <!-- Grid -->
+  <line x1="200" y1="80" x2="200" y2="320" stroke="#ff1a1a" stroke-width="0.5" opacity="0.4"/>
+  <line x1="80" y1="200" x2="320" y2="200" stroke="#ff1a1a" stroke-width="0.5" opacity="0.4"/>
+
+  <text x="200" y="380" text-anchor="middle" fill="#cccccc" font-family="monospace" font-size="12" letter-spacing="4">TARGET.IDENTIFIED</text>
+  <text x="200" y="400" text-anchor="middle" fill="#ff1a1a" font-family="monospace" font-size="10" letter-spacing="2">AWAITING_IMAGE</text>
+  <rect x="50" y="440" width="300" height="2" fill="#ff1a1a" opacity="0.3"/>
+</svg>

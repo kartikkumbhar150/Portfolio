@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" fill="none">
+  <rect width="640" height="400" fill="#020000"/>
+  
+  <!-- HUD Borders -->
+  <path d="M 20 40 L 40 20 L 600 20 L 620 40 L 620 360 L 600 380 L 40 380 L 20 360 Z" fill="none" stroke="#ff1a1a" stroke-width="1" opacity="0.3"/>
+  <line x1="20" y1="100" x2="30" y2="100" stroke="#ff1a1a" stroke-width="2"/>
+  <line x1="20" y1="300" x2="30" y2="300" stroke="#ff1a1a" stroke-width="2"/>
+  <line x1="620" y1="100" x2="610" y2="100" stroke="#ff1a1a" stroke-width="2"/>
+  <line x1="620" y1="300" x2="610" y2="300" stroke="#ff1a1a" stroke-width="2"/>
+
+  <!-- AI Terminal Mockup -->
+  <text x="60" y="70" fill="#ff1a1a" font-family="monospace" font-size="12" letter-spacing="2">> INITIALIZE: MENTOR_AI_PROTOCOL</text>
+  <text x="60" y="100" fill="#aaaaaa" font-family="monospace" font-size="11">> MODEL: CODEBERT LOADED.</text>
+  <text x="60" y="130" fill="#aaaaaa" font-family="monospace" font-size="11">> AWAITING USER INPUT...</text>
+  
+  <text x="60" y="180" fill="#ffffff" font-family="monospace" font-size="11">> USER: How do I implement BFS in python?</text>
+  
+  <!-- Processing block -->
+  <text x="60" y="210" fill="#ff1a1a" font-family="monospace" font-size="11">> SYSTEM: SEARCHING FAISS DATABASE...</text>
+  <rect x="60" y="225" width="200" height="4" fill="#ff1a1a"/>
+  <rect x="260" y="225" width="100" height="4" fill="#550000"/>
+  
+  <text x="60" y="260" fill="#ffffff" font-family="monospace" font-size="11">> MENTOR_AI:</text>
+  <text x="80" y="280" fill="#aaaaaa" font-family="monospace" font-size="10">from collections import deque</text>
+  <text x="80" y="300" fill="#aaaaaa" font-family="monospace" font-size="10">def bfs(graph, start):</text>
+  <text x="100" y="320" fill="#aaaaaa" font-family="monospace" font-size="10">visited, queue = set(), deque([start])</text>
+  
+  <!-- Flashing cursor -->
+  <rect x="330" y="310" width="8" height="12" fill="#ff1a1a">
+    <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
+  </rect>
+  
+  <!-- Right HUD decorative elements -->
+  <rect x="480" y="70" width="100" height="100" fill="none" stroke="#ff1a1a" stroke-width="0.5" stroke-dasharray="2 2"/>
+  <circle cx="530" cy="120" r="30" fill="none" stroke="#ff1a1a" stroke-width="1"/>
+  <line x1="530" y1="90" x2="530" y2="150" stroke="#ff1a1a" stroke-width="0.5"/>
+  <line x1="500" y1="120" x2="560" y2="120" stroke="#ff1a1a" stroke-width="0.5"/>
+  
+  <rect x="480" y="200" width="100" height="120" fill="#110000" stroke="#ff1a1a" stroke-width="0.5"/>
+  <rect x="490" y="210" width="80" height="10" fill="#ff1a1a" opacity="0.4"/>
+  <rect x="490" y="230" width="60" height="10" fill="#ff1a1a" opacity="0.4"/>
+  <rect x="490" y="250" width="70" height="10" fill="#ff1a1a" opacity="0.4"/>
+</svg>
