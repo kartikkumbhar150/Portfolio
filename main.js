@@ -2,12 +2,33 @@ import './style.css';
 import { HeroScene } from './three-scene.js';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import Lenis from 'lenis';
 
 gsap.registerPlugin(ScrollTrigger);
 
 // ─── Initialize Three.js ───
 const canvas = document.getElementById('hero-canvas');
 const heroScene = new HeroScene(canvas);
+
+// ─── Smooth Scroll (Lenis) ───
+const lenis = new Lenis({
+  duration: 1.2,
+  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+  direction: 'vertical',
+  gestureDirection: 'vertical',
+  smooth: true,
+  mouseMultiplier: 1,
+  smoothTouch: false,
+  touchMultiplier: 2,
+  infinite: false,
+});
+
+lenis.on('scroll', ScrollTrigger.update);
+
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
 
 // ─── Cursor Glow Effect ───
 const cursorGlow = document.getElementById('cursor-glow');
@@ -479,5 +500,34 @@ const observer = new IntersectionObserver((entries) => {
 }, observerOptions);
 
 sections.forEach(section => observer.observe(section));
+
+// ═══════════════════════════════════════════
+// MAGNETIC BUTTONS
+// ═══════════════════════════════════════════
+const magneticElements = document.querySelectorAll('.btn, .nav-link, .nav-toggle');
+
+magneticElements.forEach((elem) => {
+  elem.addEventListener('mousemove', function(e) {
+    const position = elem.getBoundingClientRect();
+    const x = e.clientX - position.left - position.width / 2;
+    const y = e.clientY - position.top - position.height / 2;
+    
+    gsap.to(elem, {
+      x: x * 0.3,
+      y: y * 0.3,
+      duration: 0.4,
+      ease: 'power2.out'
+    });
+  });
+  
+  elem.addEventListener('mouseleave', function() {
+    gsap.to(elem, {
+      x: 0,
+      y: 0,
+      duration: 0.7,
+      ease: 'elastic.out(1, 0.3)'
+    });
+  });
+});
 
 console.log('%c✦ Kartik Kumbhar Portfolio Loaded ✦', 'color: #00c8ff; font-size: 14px; font-weight: bold;');
