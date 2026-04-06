@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
 export class HeroScene {
   constructor(canvas) {
@@ -31,7 +32,7 @@ export class HeroScene {
 
     // Create objects
     this.createEmberParticles();
-    this.createMonolithicStructure();
+    this.createAvatar();
     this.createFloatingPlates();
     this.createLights();
 
@@ -93,53 +94,41 @@ export class HeroScene {
     this.scene.add(this.particles);
   }
 
-  createMonolithicStructure() {
-    this.centerGroup = new THREE.Group();
-
-    // Central core glowing mesh
-    const coreGeo = new THREE.IcosahedronGeometry(40, 1);
-    const coreMat = new THREE.MeshStandardMaterial({
-      color: 0x050000,
-      emissive: 0xff1a1a,
-      emissiveIntensity: 0.5,
-      wireframe: true,
-      transparent: true,
-      opacity: 0.8
-    });
-    this.core = new THREE.Mesh(coreGeo, coreMat);
-    this.centerGroup.add(this.core);
-
-    // Dark fragmented outer shell
-    const shellGeo = new THREE.IcosahedronGeometry(60, 0);
-    const shellMat = new THREE.MeshStandardMaterial({
-      color: 0x050000,
-      roughness: 0.9,
-      metalness: 0.8,
-      flatShading: true,
-      transparent: true,
-      opacity: 0.85
-    });
-    this.shell = new THREE.Mesh(shellGeo, shellMat);
-    this.centerGroup.add(this.shell);
-
-    // Glowing rings wrapping the structure
-    const ringGeo = new THREE.TorusGeometry(85, 0.4, 16, 100);
-    const ringMat = new THREE.MeshBasicMaterial({
-      color: 0xff1a1a,
-      transparent: true,
-      opacity: 0.6,
-      blending: THREE.AdditiveBlending
-    });
-    this.ring1 = new THREE.Mesh(ringGeo, ringMat);
-    this.ring1.rotation.x = Math.PI / 2.5;
-    this.centerGroup.add(this.ring1);
-
-    this.ring2 = new THREE.Mesh(new THREE.TorusGeometry(100, 0.2, 16, 100), ringMat);
-    this.ring2.rotation.x = -Math.PI / 3;
-    this.ring2.rotation.y = Math.PI / 4;
-    this.centerGroup.add(this.ring2);
-
-    this.scene.add(this.centerGroup);
+  createAvatar() {
+    const loader = new GLTFLoader();
+    this.avatar = null;
+    this.neck = null;
+    
+    loader.load(
+      '/models/model.glb',
+      (gltf) => {
+        this.avatar = gltf.scene;
+        
+        // Scale and position
+        this.avatar.scale.set(65, 65, 65);
+        this.avatar.position.set(0, -110, 0); 
+        
+        // Enhance materials
+        this.avatar.traverse((child) => {
+          if (child.isMesh) {
+            if (child.material) {
+              child.material.roughness = 0.5;
+              child.material.envMapIntensity = 1.0;
+            }
+          }
+          
+          if (child.isBone && (child.name === 'Neck' || child.name.includes('Neck') || child.name === 'mixamorigNeck')) {
+            this.neck = child;
+          }
+        });
+        
+        this.scene.add(this.avatar);
+      },
+      undefined,
+      (error) => {
+        console.error('Error loading avatar:', error);
+      }
+    );
   }
 
   createFloatingPlates() {
@@ -192,8 +181,12 @@ export class HeroScene {
   }
 
   createLights() {
-    const ambient = new THREE.AmbientLight(0xffffff, 0.05);
+    const ambient = new THREE.AmbientLight(0xffffff, 0.4);
     this.scene.add(ambient);
+
+    const directionalLight = new THREE.DirectionalLight(0xffffff, 1.5);
+    directionalLight.position.set(100, 200, 100);
+    this.scene.add(directionalLight);
 
     // Deep red light from below
     const redLight = new THREE.PointLight(0xff0000, 5, 600);
@@ -248,18 +241,24 @@ export class HeroScene {
       this.particles.geometry.attributes.position.needsUpdate = true;
     }
 
-    // Rotate central monolithic block
-    if (this.centerGroup) {
-      this.centerGroup.rotation.y = elapsed * 0.05;
+    // Update avatar rotation
+    if (this.avatar) {
+      // Floating animation
+      this.avatar.position.y = -110 + Math.sin(elapsed * 1.5) * 8;
+
+      // Group rotation based on mouse
+      const targetRotationY = this.mouse.x * Math.PI * 0.15;
+      const targetRotationX = this.mouse.y * Math.PI * 0.1;
       
-      this.core.rotation.x = -elapsed * 0.1;
-      this.core.rotation.y = -elapsed * 0.15;
-      
-      this.shell.rotation.x = elapsed * 0.08;
-      this.shell.rotation.z = elapsed * 0.04;
-      
-      // Pulse emission
-      this.core.material.emissiveIntensity = 0.3 + Math.sin(elapsed * 2) * 0.2;
+      this.avatar.rotation.y += (targetRotationY - this.avatar.rotation.y) * 0.05;
+      this.avatar.rotation.x += (-targetRotationX - this.avatar.rotation.x) * 0.05;
+
+      // Bone tracking (head looks at mouse)
+      if (this.neck) {
+        // Neck tracking is subtle
+        const targetNeckY = this.mouse.x * Math.PI * 0.2;
+        this.neck.rotation.y += (targetNeckY - this.neck.rotation.y) * 0.1;
+      }
     }
 
     // Floating plates
