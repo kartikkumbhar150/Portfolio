@@ -1,0 +1,111 @@
+.achievements {
+  position: relative;
+  overflow: hidden;
+}
+
+.achievements__orb {
+  width: 500px;
+  height: 500px;
+  bottom: -100px;
+  left: -100px;
+  opacity: 0.3;
+}
+
+.achievements__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 24px;
+}
+
+.achievements__card {
+  padding: 28px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.achievements__card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+.achievements__icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.achievements__title {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.4;
+}
+
+/* All subtitles use warm orange shades */
+.achievements__subtitle {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.achievements__card--gold .achievements__subtitle   { color: #f5c842; }
+.achievements__card--silver .achievements__subtitle { color: #c49870; }
+.achievements__card--violet .achievements__subtitle { color: var(--accent-amber); }
+.achievements__card--cyan .achievements__subtitle   { color: var(--accent-gold); }
+.achievements__card--green .achievements__subtitle  { color: var(--accent-blush); }
+.achievements__card--pink .achievements__subtitle   { color: var(--accent-peach); }
+.achievements__card--blue .achievements__subtitle   { color: var(--accent-orange); }
+
+.achievements__detail {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  flex: 1;
+}
+
+/* Bottom glow line */
+.achievements__glow-line {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  border-radius: 0 0 20px 20px;
+}
+
+.achievements__glow-line--gold   { background: linear-gradient(90deg, #f5c842, #e8923a); }
+.achievements__glow-line--silver { background: linear-gradient(90deg, #c49870, #a07850); }
+.achievements__glow-line--blue   { background: linear-gradient(90deg, var(--accent-orange), var(--accent-peach)); }
+.achievements__glow-line--violet { background: linear-gradient(90deg, var(--accent-amber), var(--accent-orange)); }
+.achievements__glow-line--cyan   { background: linear-gradient(90deg, var(--accent-gold), var(--accent-amber)); }
+.achievements__glow-line--green  { background: linear-gradient(90deg, var(--accent-blush), var(--accent-peach)); }
+.achievements__glow-line--pink   { background: linear-gradient(90deg, var(--accent-peach), var(--accent-cream)); }
+
+/* Card hover glows */
+.achievements__card--gold:hover   { border-color: rgba(245, 200, 66, 0.4);  box-shadow: 0 0 40px rgba(245, 200, 66, 0.15); }
+.achievements__card--silver:hover { border-color: rgba(196, 152, 112, 0.4); }
+.achievements__card--blue:hover   { border-color: rgba(240, 123, 63, 0.4);  box-shadow: 0 0 40px rgba(240, 123, 63, 0.18); }
+.achievements__card--violet:hover { border-color: rgba(212, 133, 60, 0.4);  box-shadow: 0 0 40px rgba(212, 133, 60, 0.18); }
+.achievements__card--cyan:hover   { border-color: rgba(200, 146, 58, 0.4);  box-shadow: 0 0 40px rgba(200, 146, 58, 0.18); }
+.achievements__card--green:hover  { border-color: rgba(232, 176, 144, 0.4); box-shadow: 0 0 40px rgba(232, 176, 144, 0.18); }
+.achievements__card--pink:hover   { border-color: rgba(245, 164, 122, 0.4); box-shadow: 0 0 40px rgba(245, 164, 122, 0.18); }
+
+/* Badge overrides for achievements */
+.badge--gold   { background: rgba(245, 200, 66, 0.1);   border-color: rgba(245, 200, 66, 0.3);   color: #f5c842; }
+.badge--silver { background: rgba(196, 152, 112, 0.1);  border-color: rgba(196, 152, 112, 0.3);  color: #c49870; }
+.badge--violet { background: rgba(212, 133, 60, 0.1);   border-color: rgba(212, 133, 60, 0.3);   color: var(--accent-amber); }
+.badge--cyan   { background: rgba(200, 146, 58, 0.08);  border-color: rgba(200, 146, 58, 0.25);  color: var(--accent-gold); }
+.badge--green  { background: rgba(232, 176, 144, 0.08); border-color: rgba(232, 176, 144, 0.25); color: var(--accent-blush); }
+.badge--pink   { background: rgba(245, 164, 122, 0.08); border-color: rgba(245, 164, 122, 0.25); color: var(--accent-peach); }
+
+@media (max-width: 768px) {
+  .achievements__grid { grid-template-columns: 1fr; gap: 16px; }
+}

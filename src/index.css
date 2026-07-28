@@ -1,0 +1,350 @@
+/* =============================================
+   KARTIK KUMBHAR PORTFOLIO — GLOBAL DESIGN SYSTEM
+   ============================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ---- CSS VARIABLES — PREMIUM WARM SKIN & ORANGE ---- */
+:root {
+  /* Backgrounds — deep warm charcoal with subtle warmth */
+  --bg-primary: #0e0906;
+  --bg-secondary: #140d08;
+  --bg-card: rgba(30, 18, 10, 0.75);
+  --bg-glass: rgba(255, 200, 150, 0.04);
+  --bg-glass-hover: rgba(255, 200, 150, 0.08);
+
+  /* Accent palette — skin tones, warm oranges, amber, peach */
+  --accent-orange: #f07b3f;       /* Rich warm orange */
+  --accent-peach: #f5a47a;        /* Soft skin / peach */
+  --accent-amber: #d4853c;        /* Deep amber */
+  --accent-cream: #fde0c0;        /* Light warm cream */
+  --accent-gold: #c8923a;         /* Champagne gold */
+  --accent-blush: #e8b090;        /* Blush skin */
+  --accent-tan: #bf6d3a;          /* Warm tan */
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(135deg, #f07b3f 0%, #d4853c 50%, #c8923a 100%);
+  --gradient-hero: linear-gradient(135deg, #1a0d06 0%, #0e0906 50%, #1c1108 100%);
+  --gradient-card: linear-gradient(135deg, rgba(240, 123, 63, 0.08) 0%, rgba(212, 133, 60, 0.06) 100%);
+  --gradient-text: linear-gradient(135deg, #f5a47a, #f07b3f, #d4853c);
+
+  /* Text */
+  --text-primary: #fdf3eb;
+  --text-secondary: #a88870;
+  --text-muted: #6b5040;
+
+  /* Borders */
+  --border-subtle: rgba(255, 180, 120, 0.07);
+  --border-glow: rgba(240, 123, 63, 0.35);
+
+  /* Shadows */
+  --shadow-card: 0 8px 40px rgba(0, 0, 0, 0.6);
+  --shadow-glow-blue: 0 0 30px rgba(240, 123, 63, 0.25);
+  --shadow-glow-violet: 0 0 30px rgba(212, 133, 60, 0.25);
+  --shadow-glow-hover: 0 0 60px rgba(240, 123, 63, 0.4);
+
+  /* Typography */
+  --font-heading: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Spacing */
+  --section-padding: 120px 0;
+  --container-max: 1200px;
+
+  /* Transitions */
+  --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ---- RESETS ---- */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(240, 123, 63, 0.3);
+  color: var(--text-primary);
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gradient-primary);
+  border-radius: 4px;
+}
+
+/* ---- LAYOUT ---- */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+/* ---- TYPOGRAPHY ---- */
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.section-tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: var(--accent-peach);
+  text-transform: uppercase;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 560px;
+  margin-bottom: 64px;
+}
+
+/* ---- GLASS CARD ---- */
+.glass-card {
+  background: var(--bg-glass);
+  border: 1px solid var(--border-subtle);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: var(--transition-smooth);
+  position: relative;
+  overflow: hidden;
+}
+
+.glass-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-card);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+}
+
+.glass-card:hover::before {
+  opacity: 1;
+}
+
+.glass-card:hover {
+  border-color: var(--border-glow);
+  box-shadow: var(--shadow-glow-hover);
+  transform: translateY(-4px);
+}
+
+/* ---- BUTTONS ---- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 32px;
+  background: var(--gradient-primary);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-bounce);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(240, 123, 63, 0.55);
+}
+
+.btn-primary:hover::after {
+  opacity: 0.1;
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 32px;
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-glow);
+  border-radius: 50px;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: var(--transition-smooth);
+}
+
+.btn-outline:hover {
+  background: var(--bg-glass);
+  border-color: var(--accent-orange);
+  box-shadow: var(--shadow-glow-blue);
+  transform: translateY(-2px);
+}
+
+/* ---- BADGE ---- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 14px;
+  background: rgba(240, 123, 63, 0.1);
+  border: 1px solid rgba(240, 123, 63, 0.25);
+  border-radius: 50px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent-peach);
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.badge.violet {
+  background: rgba(212, 133, 60, 0.12);
+  border-color: rgba(212, 133, 60, 0.28);
+  color: var(--accent-amber);
+}
+
+.badge.cyan {
+  background: rgba(200, 146, 58, 0.1);
+  border-color: rgba(200, 146, 58, 0.25);
+  color: var(--accent-gold);
+}
+
+.badge.green {
+  background: rgba(245, 164, 122, 0.1);
+  border-color: rgba(245, 164, 122, 0.25);
+  color: var(--accent-blush);
+}
+
+/* ---- GLOW ORBS ---- */
+.orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.orb-blue {
+  background: radial-gradient(circle, rgba(240, 123, 63, 0.22) 0%, transparent 70%);
+}
+
+.orb-violet {
+  background: radial-gradient(circle, rgba(212, 133, 60, 0.2) 0%, transparent 70%);
+}
+
+.orb-cyan {
+  background: radial-gradient(circle, rgba(200, 146, 58, 0.18) 0%, transparent 70%);
+}
+
+/* ---- SECTION HEADER ---- */
+.section-header {
+  margin-bottom: 64px;
+}
+
+/* ---- SEPARATOR ---- */
+.separator {
+  width: 60px;
+  height: 3px;
+  background: var(--gradient-primary);
+  border-radius: 3px;
+  margin-top: 16px;
+}
+
+/* ---- NOISE OVERLAY ---- */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ---- GRID LINES BACKGROUND ---- */
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(240, 123, 63, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(240, 123, 63, 0.035) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+  section {
+    padding: 80px 0;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    margin-bottom: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+}

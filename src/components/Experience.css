@@ -1,0 +1,176 @@
+.experience {
+  position: relative;
+  overflow: hidden;
+}
+
+.experience__orb {
+  width: 400px;
+  height: 400px;
+  top: 50%;
+  right: -100px;
+  opacity: 0.25;
+}
+
+.experience__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.experience__item {
+  display: grid;
+  grid-template-columns: 60px 1fr;
+  gap: 32px;
+  position: relative;
+}
+
+/* Timeline */
+.experience__timeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 8px;
+}
+
+.experience__dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.experience__dot--blue {
+  background: var(--accent-orange);
+  box-shadow: 0 0 20px rgba(240, 123, 63, 0.7);
+}
+
+.experience__dot--violet {
+  background: var(--accent-amber);
+  box-shadow: 0 0 20px rgba(212, 133, 60, 0.7);
+}
+
+.experience__dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0.3;
+}
+
+.experience__line {
+  flex: 1;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(240, 123, 63, 0.4), rgba(212, 133, 60, 0.2));
+  margin-top: 8px;
+  margin-bottom: -8px;
+  min-height: 60px;
+}
+
+/* Card */
+.experience__card {
+  padding: 32px;
+  border-radius: 20px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
+
+.experience__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.experience__period {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.experience__role {
+  font-family: var(--font-heading);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.experience__company {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+/* Bullet points */
+.experience__points {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.experience__point {
+  display: flex;
+  gap: 12px;
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  align-items: flex-start;
+}
+
+.experience__point-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-orange);
+  flex-shrink: 0;
+  margin-top: 7px;
+}
+
+.experience__card--violet .experience__point-dot {
+  background: var(--accent-amber);
+}
+
+/* Tags */
+.experience__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Badge color for experience */
+.badge--exp-blue {
+  background: rgba(240, 123, 63, 0.1);
+  border-color: rgba(240, 123, 63, 0.25);
+  color: var(--accent-orange);
+}
+
+.badge--exp-violet {
+  background: rgba(212, 133, 60, 0.1);
+  border-color: rgba(212, 133, 60, 0.25);
+  color: var(--accent-amber);
+}
+
+/* Border glow */
+.experience__border-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  border-radius: 20px 0 0 20px;
+}
+
+.experience__border-glow--blue   { background: linear-gradient(to bottom, var(--accent-orange), var(--accent-peach)); }
+.experience__border-glow--violet { background: linear-gradient(to bottom, var(--accent-amber), var(--accent-gold)); }
+
+@media (max-width: 768px) {
+  .experience__item { grid-template-columns: 32px 1fr; gap: 16px; }
+  .experience__card { padding: 24px; }
+}
