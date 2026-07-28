@@ -56,7 +56,8 @@ export default function Education() {
                       <defs>
                         <linearGradient id="gpaGradient" x1="0%" y1="0%" x2="100%" y2="100%">
                           <stop offset="0%" stopColor="#f07b3f" />
-                          <stop offset="100%" stopColor="#d4853c" />
+                          <stop offset="50%" stopColor="#ff9e68" />
+                          <stop offset="100%" stopColor="#e8823a" />
                         </linearGradient>
                       </defs>
                       <circle cx="50" cy="50" r="40" className="education__gpa-bg" />
