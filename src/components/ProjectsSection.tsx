@@ -78,22 +78,22 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           }}
         />
 
-        <div className="p-8 md:p-12">
+        <div className="p-8 md:p-12 flex flex-col gap-10">
           {/* Header */}
-          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 mb-8">
-            <div>
+          <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-6 text-center sm:text-left">
+            <div className="flex flex-col gap-2">
               <h3
                 className="text-xl md:text-2xl font-bold leading-tight"
                 style={{ fontFamily: '"Playfair Display", serif', color: '#000' }}
               >
                 {project.title}
               </h3>
-              <p className="text-sm md:text-base font-medium mt-3" style={{ color: '#8F5A39' }}>
+              <p className="text-sm md:text-base font-medium" style={{ color: '#8F5A39' }}>
                 {project.subtitle}
               </p>
             </div>
 
-            <div className="flex items-center gap-2 shrink-0">
+            <div className="flex items-center justify-center gap-2 shrink-0">
               {project.liveUrl && (
                 <a
                   href={project.liveUrl}
@@ -128,9 +128,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           </div>
 
           {/* Bullets */}
-          <ul className="space-y-4 mb-10">
+          <ul className="flex flex-col gap-4">
             {project.description.map((item, i) => (
-              <li key={i} className="flex gap-4 text-sm md:text-base leading-[1.7]" style={{ color: 'rgba(0,0,0,0.68)' }}>
+              <li key={i} className="flex items-start gap-4 text-sm md:text-base leading-[1.7]" style={{ color: 'rgba(0,0,0,0.68)' }}>
                 <span
                   className="shrink-0 mt-1.5 w-1.5 h-1.5 rounded-full"
                   style={{ background: project.accentColor }}
@@ -154,11 +154,11 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
 export default function ProjectsSection() {
   return (
-    <section className="py-24 md:py-32 px-5 md:px-8">
+    <section className="py-24 md:py-32 px-5 md:px-8 w-full flex flex-col gap-12 md:gap-16">
       <FadeUp>
-        <div className="flex items-center flex-col justify-center mb-16 md:mb-20">
+        <div className="flex flex-col items-center justify-center gap-8 md:gap-10">
           <span
-            className="mb-10 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm"
+            className="px-4 py-1.5 rounded-full text-sm font-medium shadow-sm"
             style={{ background: '#fff', color: '#8F5A39', border: '1px solid rgba(143,90,57,0.35)' }}
           >
             Projects
@@ -180,29 +180,31 @@ export default function ProjectsSection() {
               View All <ArrowRight className="w-4 h-4" />
             </a>
           </div>
-          <p className="max-w-2xl text-center mt-8 md:mt-10 leading-[1.7]" style={{ color: 'rgba(0,0,0,0.55)' }}>
+          <p className="max-w-2xl text-center leading-[1.7]" style={{ color: 'rgba(0,0,0,0.55)' }}>
             Scalable applications, AI systems, and developer tools built with real-world impact.
           </p>
         </div>
       </FadeUp>
 
-      <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
-        {PROJECTS.map((project, i) => (
-          <ProjectCard key={project.title} project={project} index={i} />
-        ))}
-      </div>
+      <div className="w-full flex justify-center">
+        <div className="max-w-5xl w-full flex flex-col gap-16 md:gap-20">
+          {PROJECTS.map((project, i) => (
+            <ProjectCard key={project.title} project={project} index={i} />
+          ))}
 
-      {/* Mobile "View all" */}
-      <div className="flex justify-center mt-8 md:hidden">
-        <a
-          href="https://github.com/kartikkumbhar150"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg"
-          style={{ color: '#8F5A39', border: '1px solid rgba(143,90,57,0.3)', background: '#fff' }}
-        >
-          View all projects <ArrowRight className="w-4 h-4" />
-        </a>
+          {/* Mobile "View all" */}
+          <div className="flex justify-center md:hidden">
+            <a
+              href="https://github.com/kartikkumbhar150"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-lg"
+              style={{ color: '#8F5A39', border: '1px solid rgba(143,90,57,0.3)', background: '#fff' }}
+            >
+              View all projects <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
       </div>
     </section>
   );

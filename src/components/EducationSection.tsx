@@ -8,7 +8,7 @@ export default function EducationSection() {
   const [expanded, setExpanded] = useState(false);
 
   return (
-    <section className="py-24 md:py-32 px-5 md:px-8 w-full">
+    <section className="py-24 md:py-32 px-5 md:px-8 w-full flex flex-col gap-12 md:gap-16">
       <FadeUp>
         <SectionHeader
           pill="Education"
@@ -18,7 +18,7 @@ export default function EducationSection() {
       </FadeUp>
 
       {/* 👇 YE RAHA PERFECT CENTERING KA CODE 👇 */}
-      <div className="w-full flex justify-center pt-12 md:pt-16">
+      <div className="w-full flex justify-center">
         <div className="w-full max-w-3xl">
           <FadeUp delay={0.1}>
             <motion.div
@@ -43,17 +43,17 @@ export default function EducationSection() {
                 </div>
 
                 {/* Text block */}
-                <div className="flex-1 min-w-0">
+                <div className="flex-1 min-w-0 flex flex-col gap-1">
                   <h3
                     className="text-base md:text-lg font-bold leading-tight"
                     style={{ color: '#000', fontFamily: '"Playfair Display", serif' }}
                   >
                     Bachelor of Engineering (B.E.)
                   </h3>
-                  <p className="text-sm mt-0.5 font-medium" style={{ color: 'rgba(0,0,0,0.65)' }}>
+                  <p className="text-sm font-medium" style={{ color: 'rgba(0,0,0,0.65)' }}>
                     Dr. D. Y. Patil Institute of Technology, Pune
                   </p>
-                  <p className="text-xs mt-0.5" style={{ color: 'rgba(0,0,0,0.4)' }}>
+                  <p className="text-xs" style={{ color: 'rgba(0,0,0,0.4)' }}>
                     Computer Engineering
                   </p>
                 </div>
@@ -104,14 +104,14 @@ export default function EducationSection() {
                     { label: 'Status', value: 'Currently Enrolled' },
                     { label: 'Focus Areas', value: 'AI, ML, Full Stack' },
                   ].map((item) => (
-                    <div key={item.label}>
+                    <div key={item.label} className="flex flex-col gap-1">
                       <p
                         className="text-[11px] font-semibold uppercase tracking-wider"
                         style={{ color: '#8F5A39' }}
                       >
                         {item.label}
                       </p>
-                      <p className="text-sm mt-0.5" style={{ color: '#000' }}>
+                      <p className="text-sm" style={{ color: '#000' }}>
                         {item.value}
                       </p>
                     </div>

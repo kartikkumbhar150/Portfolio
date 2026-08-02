@@ -7,13 +7,13 @@ import FadeUp from './FadeUp';
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="py-24 md:py-32 px-5 md:px-8">
+    <section id="contact" className="py-24 md:py-32 px-5 md:px-8 w-full flex justify-center">
       <FadeUp>
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl w-full flex flex-col items-center gap-12 md:gap-16 text-center">
           {/* Animated heading */}
-          <div className="mb-12">
+          <div className="flex flex-col gap-6 md:gap-8 w-full">
             <h2
-              className="text-3xl md:text-5xl font-bold leading-tight mb-8"
+              className="text-3xl md:text-5xl font-bold leading-tight"
               style={{ fontFamily: '"Playfair Display", serif', color: '#000' }}
             >
               Let's work on
@@ -23,7 +23,7 @@ export default function ContactSection() {
             </div>
           </div>
 
-          <p className="text-base md:text-lg leading-[1.7] mb-16 max-w-xl mx-auto" style={{ color: 'rgba(0,0,0,0.58)' }}>
+          <p className="text-base md:text-lg leading-[1.7] max-w-xl mx-auto" style={{ color: 'rgba(0,0,0,0.58)' }}>
             Whether you have a research collaboration, a full-stack project, or just want to connect —{' '}
             <span className="font-semibold" style={{ color: '#000' }}>I'd love to hear from you.</span>
           </p>
@@ -31,7 +31,7 @@ export default function ContactSection() {
           {/* CTA Button */}
           <motion.a
             href="mailto:kumbharkartik150@gmail.com"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl text-lg font-semibold text-white mb-16 transition-all"
+            className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-xl text-lg font-semibold text-white transition-all"
             style={{ background: '#8F5A39', border: '2px solid #6b4229', boxShadow: '0 4px 20px rgba(143,90,57,0.35)' }}
             whileHover={{ scale: 1.04, boxShadow: '0 8px 32px rgba(143,90,57,0.5)' }}
             whileTap={{ scale: 0.97 }}
@@ -42,7 +42,7 @@ export default function ContactSection() {
 
           {/* Contact details grid */}
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-md mx-auto mb-12"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-md mx-auto w-full"
           >
             <a
               href="mailto:kumbharkartik150@gmail.com"

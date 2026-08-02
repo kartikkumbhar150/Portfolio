@@ -38,15 +38,15 @@ export default function HeroSection() {
 
         {/* Left Column: Text Content */}
         <motion.div
-          className="flex flex-col space-y-8 md:space-y-10" // Increased vertical spacing
+          className="flex flex-col gap-8 md:gap-12" // Converted from space-y to gap
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
           {/* Header text block */}
-          <motion.div className="flex-1 min-w-0 text-center lg:text-left" variants={itemVariants}>
+          <motion.div className="flex-1 min-w-0 text-center lg:text-left flex flex-col gap-2" variants={itemVariants}>
             <h1
-              className="text-lg sm:text-3xl md:text-4xl font-semibold mb-2"
+              className="text-lg sm:text-3xl md:text-4xl font-semibold"
               style={{ color: 'rgba(0,0,0,0.45)', fontFamily: '"Playfair Display", serif' }}
             >
               Hi, I'm
@@ -57,7 +57,7 @@ export default function HeroSection() {
             >
               Kartik Kumbhar
             </h1>
-            <div className="flex items-center justify-center lg:justify-start gap-2 font-semibold mt-4 text-base md:text-xl">
+            <div className="flex items-center justify-center lg:justify-start gap-2 font-semibold text-base md:text-xl">
               <TextRotate words={['Full Stack Developer', 'AI & ML Engineer', 'Hackathon Winner', 'Research Contributor']} />
             </div>
           </motion.div>

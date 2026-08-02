@@ -95,17 +95,17 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
             </div>
 
             {/* Title / org / location */}
-            <div className="flex-1 min-w-0">
+            <div className="flex-1 min-w-0 flex flex-col gap-1">
               <h3
                 className="text-xl md:text-2xl font-bold leading-snug"
                 style={{ fontFamily: '"Playfair Display", serif', color: '#000' }}
               >
                 {exp.title}
               </h3>
-              <p className="text-base md:text-lg mt-1" style={{ color: 'rgba(0,0,0,0.6)' }}>
+              <p className="text-base md:text-lg" style={{ color: 'rgba(0,0,0,0.6)' }}>
                 {exp.org}
               </p>
-              <p className="text-sm mt-0.5" style={{ color: 'rgba(0,0,0,0.4)' }}>
+              <p className="text-sm" style={{ color: 'rgba(0,0,0,0.4)' }}>
                 {exp.location}
               </p>
             </div>
@@ -171,7 +171,7 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
               ))}
             </div>
 
-            <ul className="mt-6 space-y-3">
+            <ul className="flex flex-col gap-3">
               {exp.bullets.map((bullet, i) => (
                 <li
                   key={i}
@@ -195,7 +195,7 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
 
 export default function ExperienceSection() {
   return (
-    <section className="py-32 md:py-44 px-5 md:px-8">
+    <section className="py-32 md:py-44 px-5 md:px-8 w-full flex flex-col gap-12 md:gap-16">
       <FadeUp>
         <SectionHeader
           pill="Experience"
@@ -204,7 +204,7 @@ export default function ExperienceSection() {
         />
       </FadeUp>
 
-      <div className="max-w-5xl mx-auto mt-12 space-y-8 md:space-y-10">
+      <div className="max-w-5xl mx-auto space-y-8 md:space-y-10 w-full">
         {EXPERIENCES.map((exp, i) => (
           <ExperienceCard key={exp.title} exp={exp} index={i} />
         ))}

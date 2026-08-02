@@ -394,7 +394,7 @@ export default function AchievementsSection() {
   const [active, setActive] = useState<Achievement | null>(null);
 
   return (
-    <section className="py-24 md:py-32 px-4 md:px-8">
+    <section className="py-24 md:py-32 px-4 md:px-8 w-full flex flex-col gap-12 md:gap-16">
       <FadeUp>
         <SectionHeader
           pill="Milestones"
@@ -403,7 +403,8 @@ export default function AchievementsSection() {
         />
       </FadeUp>
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
+      <div className="w-full flex justify-center">
+        <div className="max-w-7xl w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
         {ACHIEVEMENTS.map((achievement, i) => (
           <AchievementCard
             key={achievement.title}
@@ -412,6 +413,7 @@ export default function AchievementsSection() {
             onOpen={() => setActive(achievement)}
           />
         ))}
+        </div>
       </div>
 
       <AnimatePresence>

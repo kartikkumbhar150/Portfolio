@@ -18,9 +18,9 @@ export default function SectionHeader({
       : { background: '#fff', color: '#8F5A39', border: '1px solid rgba(143,90,57,0.35)' };
 
   return (
-    <div className="flex items-center flex-col justify-center mb-16 md:mb-20">
+    <div className="flex flex-col items-center justify-center gap-8 md:gap-10">
       <span
-        className="mb-10 px-4 py-1.5 rounded-full text-sm font-medium shadow-sm"
+        className="px-4 py-1.5 rounded-full text-sm font-medium shadow-sm"
         style={pillStyle}
       >
         {pill}
@@ -32,7 +32,7 @@ export default function SectionHeader({
         {title}
       </h2>
       {subtitle && (
-        <p className="max-w-2xl text-center mt-8 md:mt-10 leading-[1.7]" style={{ color: 'rgba(0,0,0,0.55)' }}>
+        <p className="max-w-2xl text-center leading-[1.7]" style={{ color: 'rgba(0,0,0,0.55)' }}>
           {subtitle}
         </p>
       )}

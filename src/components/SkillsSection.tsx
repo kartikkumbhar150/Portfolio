@@ -57,7 +57,7 @@ function SkillTag({ skill, delay }: { skill: string; delay: number }) {
 
 export default function SkillsSection() {
   return (
-    <section className="py-24 md:py-32 px-5 md:px-8">
+    <section className="py-24 md:py-32 px-5 md:px-8 w-full flex flex-col gap-12 md:gap-16">
       <FadeUp>
         <SectionHeader
           pill="Skills"
@@ -66,14 +66,15 @@ export default function SkillsSection() {
         />
       </FadeUp>
 
-      <div className="max-w-5xl mx-auto space-y-16 md:space-y-20">
+      <div className="w-full flex justify-center">
+        <div className="max-w-5xl w-full flex flex-col gap-16 md:gap-20">
         {SKILL_GROUPS.map((group, gi) => (
           <FadeUp key={group.category} delay={gi * 0.07}>
             <div
-              className="rounded-2xl p-8 md:p-12"
+              className="rounded-2xl p-8 md:p-12 flex flex-col gap-8"
               style={{ background: '#fff', border: '1px solid rgba(143,90,57,0.14)', boxShadow: '0 2px 10px rgba(143,90,57,0.05)' }}
             >
-              <div className="flex items-center gap-4 mb-8">
+              <div className="flex items-center gap-4">
                 <span
                   className="text-xs font-semibold uppercase tracking-wider px-3 py-1.5 rounded-md"
                   style={{ background: '#A6D7F0', color: '#000', border: '1px solid #7bbde0' }}
@@ -90,6 +91,7 @@ export default function SkillsSection() {
             </div>
           </FadeUp>
         ))}
+        </div>
       </div>
     </section>
   );
