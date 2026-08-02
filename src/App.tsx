@@ -22,6 +22,11 @@ function App() {
           <SectionDivider />
           <EducationSection />
 
+          {/* 👇 YE WALA BLOCK ADD KAR 👇 */}
+          {/* Inline style ka use kiya hai, ye fail nahi hoga */}
+          <div style={{ height: '100px', width: '100%' }}></div>
+          {/* 👆 YE WALA BLOCK ADD KAR 👆 */}
+
           <SectionDivider />
           <ExperienceSection />
 

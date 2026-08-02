@@ -49,7 +49,7 @@ const EXPERIENCES: Experience[] = [
   {
     title: 'Full Stack Developer Intern',
     org: 'Auriquant Designs',
-    location: 'On-site',
+    location: 'Remote',
     period: 'Jan 2026 – Mar 2026',
     type: 'Internship',
     accent: ENGINEERING,
@@ -84,8 +84,8 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
         transition={{ duration: 0.25 }}
         onClick={() => setExpanded((e) => !e)}
       >
-        <div className="p-6 md:p-8">
-          <div className="flex flex-col sm:flex-row sm:items-center gap-5 sm:gap-6">
+        <div className="p-8 md:p-10">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-7 sm:gap-8">
             {/* Logo / icon tile */}
             <div
               className="shrink-0 w-16 h-16 md:w-20 md:h-20 rounded-xl flex items-center justify-center overflow-hidden"
@@ -195,7 +195,7 @@ function ExperienceCard({ exp, index }: { exp: Experience; index: number }) {
 
 export default function ExperienceSection() {
   return (
-    <section className="py-24 md:py-32 px-5 md:px-8">
+    <section className="py-32 md:py-44 px-5 md:px-8">
       <FadeUp>
         <SectionHeader
           pill="Experience"
@@ -204,7 +204,7 @@ export default function ExperienceSection() {
         />
       </FadeUp>
 
-      <div className="max-w-4xl mx-auto mt-4 space-y-6 md:space-y-8">
+      <div className="max-w-5xl mx-auto mt-12 space-y-8 md:space-y-10">
         {EXPERIENCES.map((exp, i) => (
           <ExperienceCard key={exp.title} exp={exp} index={i} />
         ))}

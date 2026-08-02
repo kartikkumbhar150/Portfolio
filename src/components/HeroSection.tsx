@@ -1,4 +1,4 @@
-// HeroSection – original left content + cascading image right layout
+// HeroSection.tsx
 import { motion } from 'framer-motion';
 import { Mail, FileText, Phone } from 'lucide-react';
 import { GitHubIcon, LinkedInIcon } from './icons';
@@ -29,30 +29,35 @@ const itemVariants: any = {
 
 export default function HeroSection() {
   return (
-    <section className="min-h-screen pt-32 pb-24 md:pt-40 md:pb-32 px-5 md:px-8 flex items-center overflow-hidden">
-      <div className="w-full max-w-7xl mx-auto lg:translate-x-8 grid grid-cols-1 lg:grid-cols-[58%_42%] gap-16 lg:gap-12 items-center">
-        {/* Left Column: Original Text Content */}
+    <section className="min-h-screen pt-32 pb-24 md:pt-40 md:pb-32 px-6 md:px-12 flex items-center overflow-hidden">
+      {/* 
+        Adjusted grid columns for better balance and significantly increased the gap 
+        Removed the weird translate-x-8 that threw off centering
+      */}
+      <div className="w-full max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-16 lg:gap-24 items-center">
+
+        {/* Left Column: Text Content */}
         <motion.div
-          className="space-y-6 md:space-y-8"
+          className="flex flex-col space-y-8 md:space-y-10" // Increased vertical spacing
           variants={containerVariants}
           initial="hidden"
           animate="visible"
         >
-          {/* Text block */}
-          <motion.div className="flex-1 min-w-0 text-center md:text-left" variants={itemVariants}>
+          {/* Header text block */}
+          <motion.div className="flex-1 min-w-0 text-center lg:text-left" variants={itemVariants}>
             <h1
-              className="text-lg sm:text-3xl md:text-4xl font-semibold"
+              className="text-lg sm:text-3xl md:text-4xl font-semibold mb-2"
               style={{ color: 'rgba(0,0,0,0.45)', fontFamily: '"Playfair Display", serif' }}
             >
               Hi, I'm
             </h1>
             <h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mt-0.5 md:mt-2 font-bold leading-tight"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight"
               style={{ fontFamily: '"Playfair Display", serif', color: '#000' }}
             >
               Kartik Kumbhar
             </h1>
-            <div className="flex items-center justify-center md:justify-start gap-2 font-semibold mt-3 md:mt-4 text-base md:text-lg">
+            <div className="flex items-center justify-center lg:justify-start gap-2 font-semibold mt-4 text-base md:text-xl">
               <TextRotate words={['Full Stack Developer', 'AI & ML Engineer', 'Hackathon Winner', 'Research Contributor']} />
             </div>
           </motion.div>
@@ -60,7 +65,7 @@ export default function HeroSection() {
           {/* Bio */}
           <motion.div variants={itemVariants}>
             <p
-              className="text-sm sm:text-base max-sm:text-left md:text-lg text-center md:text-left leading-relaxed max-w-lg mx-auto md:mx-0"
+              className="text-base md:text-lg text-center lg:text-left leading-relaxed max-w-2xl mx-auto lg:mx-0"
               style={{ color: 'rgba(0,0,0,0.58)' }}
             >
               Computer Engineering student at{' '}
@@ -80,28 +85,28 @@ export default function HeroSection() {
             </p>
           </motion.div>
 
-          {/* CTA + contacts */}
+          {/* CTA + Contacts */}
           <motion.div
-            className="flex flex-col items-center md:items-start gap-4 md:gap-6"
+            className="flex flex-col items-center lg:items-start gap-6 md:gap-8"
             variants={itemVariants}
           >
             {/* Buttons */}
-            <div className="flex flex-row flex-wrap justify-center md:justify-start gap-3 sm:gap-4 w-full md:w-auto">
+            <div className="flex flex-row flex-wrap justify-center lg:justify-start gap-4 w-full md:w-auto">
               <a
                 href="#contact"
-                className="group flex-1 md:flex-none inline-flex h-11 md:h-12 items-center justify-center rounded-lg px-6 sm:px-8 text-sm md:text-base font-medium text-white transition-colors"
+                className="group flex-1 md:flex-none inline-flex h-12 md:h-14 items-center justify-center rounded-xl px-8 text-sm md:text-base font-medium text-white transition-all shadow-sm hover:shadow-md"
                 style={{ background: '#8F5A39', border: '1px solid #6b4229' }}
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = '#6b4229')}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = '#8F5A39')}
               >
-                <Mail className="w-4 h-4 mr-2" aria-hidden="true" />
-                Contact
+                <Mail className="w-5 h-5 mr-2" aria-hidden="true" />
+                Contact Me
               </a>
               <a
                 href="/kartik-kumbhar-resume.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex-1 md:flex-none inline-flex h-11 md:h-12 items-center justify-center rounded-lg px-6 sm:px-8 text-sm md:text-base font-medium transition-colors"
+                className="group flex-1 md:flex-none inline-flex h-12 md:h-14 items-center justify-center rounded-xl px-8 text-sm md:text-base font-medium transition-all shadow-sm hover:shadow-md"
                 style={{
                   background: '#F4EFE7',
                   border: '1px solid rgba(143,90,57,0.3)',
@@ -110,63 +115,63 @@ export default function HeroSection() {
                 onMouseEnter={(e) => ((e.currentTarget as HTMLElement).style.background = '#ede5d8')}
                 onMouseLeave={(e) => ((e.currentTarget as HTMLElement).style.background = '#F4EFE7')}
               >
-                <FileText className="w-4 h-4 mr-2" aria-hidden="true" />
-                Resume
+                <FileText className="w-5 h-5 mr-2" aria-hidden="true" />
+                View Resume
               </a>
             </div>
 
-            {/* Contact details + social icons */}
-            <div className="flex flex-wrap items-center justify-center md:justify-start gap-4 sm:gap-6">
-              {/* Phone */}
+            {/* Contact details + Social icons */}
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-5 sm:gap-8 pt-2">
               <a
                 href="tel:+919322130400"
-                className="inline-flex items-center gap-2 text-sm md:text-base"
-                style={{ color: 'rgba(0,0,0,0.55)' }}
+                className="inline-flex items-center gap-2 text-sm md:text-base hover:opacity-80 transition-opacity"
+                style={{ color: 'rgba(0,0,0,0.65)' }}
               >
                 <Phone className="w-4 h-4" style={{ color: '#8F5A39' }} />
                 +91 93221 30400
               </a>
-              {/* Email */}
               <a
                 href="mailto:kumbharkartik150@gmail.com"
-                className="inline-flex items-center gap-2 text-sm md:text-base"
-                style={{ color: 'rgba(0,0,0,0.55)' }}
+                className="inline-flex items-center gap-2 text-sm md:text-base hover:opacity-80 transition-opacity"
+                style={{ color: 'rgba(0,0,0,0.65)' }}
               >
                 <Mail className="w-4 h-4" style={{ color: '#8F5A39' }} />
                 kumbharkartik150@gmail.com
               </a>
-              {/* Social icons */}
-              {SOCIAL_LINKS.map((link, i) => (
-                <motion.div
-                  key={link.label}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 0.5 + i * 0.1 }}
-                >
-                  <a
-                    href={link.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={link.label}
-                    className="w-10 h-10 md:w-11 md:h-11 rounded-lg flex items-center justify-center transition-all duration-200"
-                    style={{
-                      border: '1px solid rgba(143,90,57,0.3)',
-                      background: '#F4EFE7',
-                      color: '#8F5A39',
-                    }}
-                    onMouseEnter={(e) => {
-                      (e.currentTarget as HTMLElement).style.background = '#8F5A39';
-                      (e.currentTarget as HTMLElement).style.color = '#fff';
-                    }}
-                    onMouseLeave={(e) => {
-                      (e.currentTarget as HTMLElement).style.background = '#F4EFE7';
-                      (e.currentTarget as HTMLElement).style.color = '#8F5A39';
-                    }}
+
+              <div className="flex gap-3 ml-2">
+                {SOCIAL_LINKS.map((link, i) => (
+                  <motion.div
+                    key={link.label}
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    transition={{ delay: 0.5 + i * 0.1 }}
                   >
-                    {link.icon}
-                  </a>
-                </motion.div>
-              ))}
+                    <a
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={link.label}
+                      className="w-11 h-11 rounded-lg flex items-center justify-center transition-all duration-200"
+                      style={{
+                        border: '1px solid rgba(143,90,57,0.3)',
+                        background: '#F4EFE7',
+                        color: '#8F5A39',
+                      }}
+                      onMouseEnter={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#8F5A39';
+                        (e.currentTarget as HTMLElement).style.color = '#fff';
+                      }}
+                      onMouseLeave={(e) => {
+                        (e.currentTarget as HTMLElement).style.background = '#F4EFE7';
+                        (e.currentTarget as HTMLElement).style.color = '#8F5A39';
+                      }}
+                    >
+                      {link.icon}
+                    </a>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </motion.div>
         </motion.div>
@@ -176,36 +181,32 @@ export default function HeroSection() {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="relative w-full max-w-[280px] sm:max-w-xs mx-auto lg:max-w-none lg:w-[65%] xl:w-[55%] lg:ml-auto aspect-[3.5/4] mt-12 lg:mt-0"
+          className="relative w-full max-w-[280px] sm:max-w-[320px] lg:max-w-md mx-auto aspect-[3.5/4] mt-12 lg:mt-0 mb-8 lg:mb-0 lg:ml-auto"
         >
-          {/* Stacked Frames (Back to Front) */}
+          {/* 
+            Changed translations to positive numbers so they cascade to the bottom right.
+            This moves the visual weight away from the text column instead of towards it.
+          */}
           <div
             className="absolute inset-0 rounded-2xl border"
             style={{
               borderColor: 'rgba(143,90,57,0.15)',
-              transform: 'translate(-32px, -32px)',
+              transform: 'translate(24px, 24px)',
             }}
           />
           <div
             className="absolute inset-0 rounded-2xl border"
             style={{
               borderColor: 'rgba(143,90,57,0.25)',
-              transform: 'translate(-20px, -20px)',
-            }}
-          />
-          <div
-            className="absolute inset-0 rounded-2xl border"
-            style={{
-              borderColor: 'rgba(143,90,57,0.4)',
-              transform: 'translate(-8px, -8px)',
+              transform: 'translate(12px, 12px)',
             }}
           />
 
           {/* Main Image Container */}
           <div
-            className="absolute inset-0 rounded-2xl overflow-hidden"
+            className="absolute inset-0 rounded-2xl overflow-hidden z-10"
             style={{
-              boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+              boxShadow: '-10px -10px 40px rgba(0,0,0,0.05), 10px 10px 40px rgba(0,0,0,0.08)',
               background: '#ede5d8',
             }}
           >
