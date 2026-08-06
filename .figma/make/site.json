@@ -1,0 +1,10 @@
+{
+  "description": "Showcase your skills and achievements with a visually stunning personal portfolio that highlights your tech expertise and projects.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}

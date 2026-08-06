@@ -1,60 +1,70 @@
-// Footer – minimal Travertine footer with name, links, copyright
 import { Mail } from 'lucide-react';
-import { GitHubIcon, LinkedInIcon } from './icons';
+import { GitHubIcon, LinkedInIcon } from './Icons';
 
 export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer
-      className="border-t px-5 py-8"
-      style={{ background: '#F4EFE7', borderColor: 'rgba(143,90,57,0.15)' }}
-    >
-      <div className="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-        <div className="text-center sm:text-left">
-          <p
-            className="font-bold text-base"
-            style={{ fontFamily: '"Playfair Display", serif', color: '#000' }}
-          >
+    <footer style={{
+      borderTop: '1px solid rgba(143,90,57,0.18)',
+      padding: '2rem clamp(1.25rem, 4vw, 2rem)',
+    }}>
+      <div style={{
+        maxWidth: 1200,
+        margin: '0 auto',
+        display: 'grid',
+        gridTemplateColumns: '1fr auto 1fr',
+        alignItems: 'center',
+        gap: '1rem',
+      }} className="footer-grid">
+        {/* Left */}
+        <div>
+          <p style={{
+            fontFamily: '"Playfair Display", Georgia, serif',
+            fontWeight: 700, fontSize: '1.1rem', margin: '0 0 0.15rem', color: '#000',
+          }}>
             Kartik Kumbhar
           </p>
-          <p className="text-xs mt-0.5" style={{ color: 'rgba(0,0,0,0.45)' }}>
-            Full Stack Developer & AI Engineer
+          <p style={{ margin: 0, fontSize: '0.78rem', color: 'rgba(0,0,0,0.4)' }}>
+            Full Stack Developer &amp; AI Engineer
           </p>
         </div>
 
-        <div className="flex items-center gap-3">
-          {[
-            { href: 'https://github.com/kartikkumbhar150', label: 'GitHub', icon: <GitHubIcon className="w-4 h-4" /> },
-            { href: 'https://www.linkedin.com/in/kartik-kumbhar150/', label: 'LinkedIn', icon: <LinkedInIcon className="w-4 h-4" /> },
-            { href: 'mailto:kumbharkartik150@gmail.com', label: 'Email', icon: <Mail className="w-4 h-4" /> },
-          ].map((s) => (
-            <a
-              key={s.label}
-              href={s.href}
-              target={s.href.startsWith('http') ? '_blank' : undefined}
-              rel="noopener noreferrer"
-              aria-label={s.label}
-              className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200"
-              style={{ border: '1px solid rgba(143,90,57,0.25)', background: '#fff', color: '#8F5A39' }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.background = '#8F5A39';
-                (e.currentTarget as HTMLElement).style.color = '#fff';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.background = '#fff';
-                (e.currentTarget as HTMLElement).style.color = '#8F5A39';
-              }}
-            >
-              {s.icon}
-            </a>
-          ))}
+        {/* Center: social icons */}
+        <div style={{ display: 'flex', gap: '0.5rem' }}>
+          <a href="https://github.com/KartikKumbhar" target="_blank" rel="noopener noreferrer" className="social-icon" style={{ width: 36, height: 36 }} aria-label="GitHub">
+            <GitHubIcon size={16} />
+          </a>
+          <a href="https://linkedin.com/in/kartik-kumbhar" target="_blank" rel="noopener noreferrer" className="social-icon" style={{ width: 36, height: 36 }} aria-label="LinkedIn">
+            <LinkedInIcon size={16} />
+          </a>
+          <a href="mailto:kartikkumbhar1811@gmail.com" className="social-icon" style={{ width: 36, height: 36 }} aria-label="Email">
+            <Mail size={16} />
+          </a>
         </div>
 
-        <p className="text-xs" style={{ color: 'rgba(0,0,0,0.4)' }}>
-          © {year} Kartik Kumbhar. All rights reserved.
-        </p>
+        {/* Right */}
+        <div style={{ textAlign: 'right' }}>
+          <p style={{ margin: 0, fontSize: '0.78rem', color: 'rgba(0,0,0,0.4)' }}>
+            &copy; {year} Kartik Kumbhar. All rights reserved.
+          </p>
+        </div>
       </div>
+
+      <style>{`
+        @media (max-width: 600px) {
+          .footer-grid {
+            grid-template-columns: 1fr !important;
+            text-align: center !important;
+          }
+          .footer-grid > *:last-child {
+            text-align: center !important;
+          }
+          .footer-grid > *:nth-child(2) {
+            justify-content: center;
+          }
+        }
+      `}</style>
     </footer>
   );
 }

@@ -1,52 +1,32 @@
-import HeroSection from './components/HeroSection';
-import SectionDivider from './components/SectionDivider';
-import EducationSection from './components/EducationSection';
-import ExperienceSection from './components/ExperienceSection';
-import AchievementsSection from './components/AchievementsSection';
-import ProjectsSection from './components/ProjectsSection';
-import SkillsSection from './components/SkillsSection';
-import ContactSection from './components/ContactSection';
+import Hero from './components/Hero';
+import Education from './components/Education';
+import Experience from './components/Experience';
+import Achievements from './components/Achievements';
+import Projects from './components/Projects';
+import Skills from './components/Skills';
+import Contact from './components/Contact';
 import Footer from './components/Footer';
+import SectionDivider from './components/SectionDivider';
 
-function App() {
+export default function App() {
   return (
-    <div className="min-h-screen font-sans flex flex-col" style={{ color: '#000', fontFamily: '"Inter", sans-serif' }}>
-      {/* Background layer */}
-      <div className="fixed inset-0 -z-10" style={{ background: '#F4EFE7' }} />
-
-      {/* Main content column */}
-      <main className="flex justify-center px-5 md:px-10 grow">
-        <div className="w-full max-w-7xl mx-auto">
-          <HeroSection />
-
-          <SectionDivider />
-          <EducationSection />
-
-          {/* 👇 YE WALA BLOCK ADD KAR 👇 */}
-          {/* Inline style ka use kiya hai, ye fail nahi hoga */}
-          <div style={{ height: '100px', width: '100%' }}></div>
-          {/* 👆 YE WALA BLOCK ADD KAR 👆 */}
-
-          <SectionDivider />
-          <ExperienceSection />
-
-          <SectionDivider />
-          <AchievementsSection />
-
-          <SectionDivider />
-          <ProjectsSection />
-
-          <SectionDivider />
-          <SkillsSection />
-
-          <SectionDivider />
-          <ContactSection />
-        </div>
+    <>
+      <main>
+        <Hero />
+        <SectionDivider />
+        <Education />
+        <SectionDivider />
+        <Experience />
+        <SectionDivider />
+        <Achievements />
+        <SectionDivider />
+        <Projects />
+        <SectionDivider />
+        <Skills />
+        <SectionDivider />
+        <Contact />
       </main>
-
       <Footer />
-    </div>
+    </>
   );
 }
-
-export default App;
