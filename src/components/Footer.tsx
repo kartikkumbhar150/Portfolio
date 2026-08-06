@@ -38,7 +38,7 @@ export default function Footer() {
           <a href="https://www.linkedin.com/in/kartik-kumbhar150/" target="_blank" rel="noopener noreferrer" className="social-icon" style={{ width: 36, height: 36 }} aria-label="LinkedIn">
             <LinkedInIcon size={16} />
           </a>
-          <a href="mailto:kartikkumbhar1811@gmail.com" className="social-icon" style={{ width: 36, height: 36 }} aria-label="Email">
+          <a href="mailto:kumbharkartik150@gmail.com" className="social-icon" style={{ width: 36, height: 36 }} aria-label="Email">
             <Mail size={16} />
           </a>
         </div>

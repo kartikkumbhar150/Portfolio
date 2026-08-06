@@ -35,7 +35,7 @@ export default function Contact() {
           </p>
 
           <motion.a
-            href="mailto:kartikkumbhar1811@gmail.com"
+            href="mailto:kumbharkartik150@gmail.com"
             className="btn btn-primary"
             style={{ padding: '0.85rem 2.5rem', fontSize: '1rem', gap: '0.5rem', textDecoration: 'none', marginBottom: '3rem' }}
             whileHover={{ scale: 1.03, y: -1 }}
@@ -56,25 +56,25 @@ export default function Contact() {
             maxWidth: 520,
             margin: '0 auto 2rem',
           }}>
-            <a href="mailto:kartikkumbhar1811@gmail.com" style={{ textDecoration: 'none' }}>
+            <a href="mailto:kumbharkartik150@gmail.com" style={{ textDecoration: 'none' }}>
               <div className="card-surface" style={{ padding: '1.25rem', textAlign: 'left', cursor: 'pointer' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.4rem' }}>
                   <Mail size={18} color="#8F5A39" />
                   <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(0,0,0,0.4)', fontWeight: 600 }}>Email</span>
                 </div>
                 <p style={{ margin: 0, fontSize: '0.85rem', fontWeight: 500, color: '#000', wordBreak: 'break-all' }}>
-                  kartikkumbhar1811@gmail.com
+                  kumbharkartik150@gmail.com
                 </p>
               </div>
             </a>
-            <a href="tel:+917498003049" style={{ textDecoration: 'none' }}>
+            <a href="tel:+919322130400" style={{ textDecoration: 'none' }}>
               <div className="card-surface" style={{ padding: '1.25rem', textAlign: 'left', cursor: 'pointer' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.4rem' }}>
                   <Phone size={18} color="#8F5A39" />
                   <span style={{ fontSize: '0.75rem', textTransform: 'uppercase', letterSpacing: '0.05em', color: 'rgba(0,0,0,0.4)', fontWeight: 600 }}>Phone</span>
                 </div>
                 <p style={{ margin: 0, fontSize: '0.85rem', fontWeight: 500, color: '#000' }}>
-                  +91 74980 03049
+                  +91 93221 30400
                 </p>
               </div>
             </a>
@@ -90,7 +90,7 @@ export default function Contact() {
             <a href="https://www.linkedin.com/in/kartik-kumbhar150/" target="_blank" rel="noopener noreferrer" className="social-icon" style={{ width: 44, height: 44 }} aria-label="LinkedIn">
               <LinkedInIcon size={19} />
             </a>
-            <a href="mailto:kartikkumbhar1811@gmail.com" className="social-icon" style={{ width: 44, height: 44 }} aria-label="Email">
+            <a href="mailto:kumbharkartik150@gmail.com" className="social-icon" style={{ width: 44, height: 44 }} aria-label="Email">
               <Mail size={19} />
             </a>
           </div>

@@ -111,19 +111,19 @@ export default function Hero() {
 
           {/* Contact row */}
           <motion.div variants={stagger.item} style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-            <a href="tel:+917498003049" style={{
+            <a href="tel:+919322130400" style={{
               display: 'flex', alignItems: 'center', gap: '0.4rem',
               color: '#8F5A39', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500,
             }}>
               <Phone size={15} />
-              +91 74980 03049
+              +91 93221 30400
             </a>
-            <a href="mailto:kartikkumbhar1811@gmail.com" style={{
+            <a href="mailto:kumbharkartik150@gmail.com" style={{
               display: 'flex', alignItems: 'center', gap: '0.4rem',
               color: '#8F5A39', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500,
             }}>
               <Mail size={15} />
-              kartikkumbhar1811@gmail.com
+              kumbharkartik150@gmail.com
             </a>
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               <a
