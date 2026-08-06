@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { Phone, Mail, Send } from 'lucide-react';
 import TextRotate from './TextRotate';
 import { GitHubIcon, LinkedInIcon } from './Icons';
+import meJpg from '../assets/me.jpg';
 
 const stagger = {
   container: {
@@ -184,7 +185,7 @@ export default function Hero() {
               background: '#ede5d8',
             }}>
               <img
-                src="/me.jpg"
+                src={meJpg}
                 alt="Kartik Kumbhar"
                 style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
                 onError={(e) => {
