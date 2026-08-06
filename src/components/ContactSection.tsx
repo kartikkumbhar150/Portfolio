@@ -70,7 +70,7 @@ export default function ContactSection() {
           <div className="flex justify-center gap-6">
             {[
               { href: 'https://github.com/kartikkumbhar150', label: 'GitHub', icon: <GitHubIcon className="w-5 h-5" /> },
-              { href: 'https://linkedin.com/in/kartik-kumbhar', label: 'LinkedIn', icon: <LinkedInIcon className="w-5 h-5" /> },
+              { href: 'https://www.linkedin.com/in/kartik-kumbhar150/', label: 'LinkedIn', icon: <LinkedInIcon className="w-5 h-5" /> },
               { href: 'mailto:kumbharkartik150@gmail.com', label: 'Email', icon: <Mail className="w-5 h-5" /> },
             ].map((s) => (
               <motion.a

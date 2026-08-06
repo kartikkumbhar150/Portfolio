@@ -71,7 +71,7 @@ export default function EducationSection() {
                       className="text-xs font-semibold px-2.5 py-1 rounded-md"
                       style={{ background: '#A6D7F0', color: '#000', border: '1px solid #7bbde0' }}
                     >
-                      9.03 CGPA
+                      9.22 CGPA
                     </span>
                   </div>
                   <ChevronDown

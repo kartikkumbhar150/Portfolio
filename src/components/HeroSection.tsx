@@ -12,7 +12,7 @@ const SOCIAL_LINKS = [
     icon: <GitHubIcon className="w-5 h-5" />,
   },
   {
-    href: 'https://linkedin.com/in/kartik-kumbhar',
+    href: 'https://www.linkedin.com/in/kartik-kumbhar150/',
     label: 'LinkedIn',
     icon: <LinkedInIcon className="w-5 h-5" />,
   },

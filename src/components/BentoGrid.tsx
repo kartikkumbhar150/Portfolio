@@ -167,7 +167,7 @@ export default function BentoGrid() {
               transition={{ delay: 0.2 }}
             >
               <a
-                href="https://linkedin.com/in/kartik-kumbhar"
+                href="https://www.linkedin.com/in/kartik-kumbhar150/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="h-full block"
