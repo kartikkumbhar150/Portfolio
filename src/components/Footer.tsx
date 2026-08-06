@@ -32,10 +32,10 @@ export default function Footer() {
 
         {/* Center: social icons */}
         <div style={{ display: 'flex', gap: '0.5rem' }}>
-          <a href="https://github.com/KartikKumbhar" target="_blank" rel="noopener noreferrer" className="social-icon" style={{ width: 36, height: 36 }} aria-label="GitHub">
+          <a href="https://github.com/kartikkumbhar150" target="_blank" rel="noopener noreferrer" className="social-icon" style={{ width: 36, height: 36 }} aria-label="GitHub">
             <GitHubIcon size={16} />
           </a>
-          <a href="https://linkedin.com/in/kartik-kumbhar" target="_blank" rel="noopener noreferrer" className="social-icon" style={{ width: 36, height: 36 }} aria-label="LinkedIn">
+          <a href="https://www.linkedin.com/in/kartik-kumbhar150/" target="_blank" rel="noopener noreferrer" className="social-icon" style={{ width: 36, height: 36 }} aria-label="LinkedIn">
             <LinkedInIcon size={16} />
           </a>
           <a href="mailto:kartikkumbhar1811@gmail.com" className="social-icon" style={{ width: 36, height: 36 }} aria-label="Email">

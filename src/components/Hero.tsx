@@ -127,7 +127,7 @@ export default function Hero() {
             </a>
             <div style={{ display: 'flex', gap: '0.5rem' }}>
               <a
-                href="https://github.com/KartikKumbhar"
+                href="https://github.com/kartikkumbhar150"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"
@@ -137,7 +137,7 @@ export default function Hero() {
                 <GitHubIcon size={17} />
               </a>
               <a
-                href="https://linkedin.com/in/kartik-kumbhar"
+                href="https://www.linkedin.com/in/kartik-kumbhar150/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="social-icon"

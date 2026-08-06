@@ -12,7 +12,7 @@ const projects = [
     accentLight: '#b07a55',
     links: [
       { label: 'Live', icon: <ExternalLink size={14} />, href: '#' },
-      { label: 'GitHub', icon: <GitHubIcon size={14} />, href: 'https://github.com/KartikKumbhar/gaia' },
+      { label: 'GitHub', icon: <GitHubIcon size={14} />, href: 'https://github.com/kartikkumbhar150/gaia' },
     ],
     bullets: [
       'Built a Chrome Extension + Flask backend for real-time ESG data extraction from any webpage using LLM-powered pipelines.',
@@ -28,7 +28,7 @@ const projects = [
     accent: '#3E7EA6',
     accentLight: '#6aaecf',
     links: [
-      { label: 'GitHub', icon: <GitHubIcon size={14} />, href: 'https://github.com/KartikKumbhar/hirex' },
+      { label: 'GitHub', icon: <GitHubIcon size={14} />, href: 'https://github.com/kartikkumbhar150/hirex' },
     ],
     bullets: [
       'Full-stack recruitment platform with semantic search using Qdrant vector database for intelligent candidate-job matching powered by AI embeddings.',
@@ -67,7 +67,7 @@ export default function Projects() {
               </h2>
             </div>
             <a
-              href="https://github.com/KartikKumbhar"
+              href="https://github.com/kartikkumbhar150"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"
@@ -145,7 +145,7 @@ export default function Projects() {
         {/* Mobile view all */}
         <div style={{ textAlign: 'center', marginTop: '2rem' }}>
           <motion.a
-            href="https://github.com/KartikKumbhar"
+            href="https://github.com/kartikkumbhar150"
             target="_blank"
             rel="noopener noreferrer"
             className="btn btn-secondary"
