@@ -8,7 +8,7 @@ import latrobeLogo from '../assets/latrobe logo.png';
 const experiences = [
   {
     id: 'research',
-    icon: <img src={latrobeLogo} alt="La Trobe" style={{ width: 24, height: 24, objectFit: 'contain' }} />,
+    icon: <img src={latrobeLogo} alt="La Trobe" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />,
     accent: '#8F5A39',
     accentBg: '#F4EFE7',
     title: 'Research Project',
@@ -66,7 +66,7 @@ function ExperienceCard({ exp }: { exp: typeof experiences[0] }) {
             background: exp.accentBg,
             border: `1px solid ${exp.accent}30`,
             display: 'flex', alignItems: 'center', justifyContent: 'center',
-            flexShrink: 0,
+            flexShrink: 0, overflow: 'hidden',
           }}>
             {exp.icon}
           </div>
