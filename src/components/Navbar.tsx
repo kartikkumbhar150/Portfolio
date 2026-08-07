@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
-import { Home, Folder, Mail, Moon } from 'lucide-react';
+import { Home, Folder, Mail, GraduationCap, Briefcase, Trophy, Code2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const navItems = [
   { id: 'hero', label: 'Home', icon: <Home size={18} /> },
+  { id: 'education', label: 'Education', icon: <GraduationCap size={18} /> },
+  { id: 'experience', label: 'Experience', icon: <Briefcase size={18} /> },
+  { id: 'achievements', label: 'Achievements', icon: <Trophy size={18} /> },
   { id: 'projects', label: 'Projects', icon: <Folder size={18} /> },
+  { id: 'skills', label: 'Skills', icon: <Code2 size={18} /> },
   { id: 'contact', label: 'Contact', icon: <Mail size={18} /> },
 ];
 
@@ -13,7 +17,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['hero', 'projects', 'contact'];
+      const sections = ['hero', 'education', 'experience', 'achievements', 'projects', 'skills', 'contact'];
       let current = 'hero';
       for (const section of sections) {
         const el = document.getElementById(section);
@@ -78,8 +82,8 @@ export default function Navbar() {
               padding: isActive ? '0.55rem 1.1rem' : '0.55rem 0.65rem',
               borderRadius: '9999px',
               border: 'none',
-              background: isActive ? '#2b2b2b' : 'transparent',
-              color: isActive ? '#fff' : '#666',
+              background: isActive ? '#8F5A39' : 'transparent',
+              color: isActive ? '#fff' : '#8F5A39',
               cursor: 'pointer',
               transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
               overflow: 'hidden'
@@ -107,34 +111,6 @@ export default function Navbar() {
           </button>
         );
       })}
-
-      <div style={{ width: 1, height: 24, background: 'rgba(0,0,0,0.1)', margin: '0 0.15rem' }} />
-
-      <button
-        onClick={() => {}}
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '0.55rem',
-          borderRadius: '50%',
-          border: 'none',
-          background: 'transparent',
-          color: '#666',
-          cursor: 'pointer',
-          transition: 'background 0.2s ease, color 0.2s ease',
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.background = 'rgba(0,0,0,0.05)';
-          e.currentTarget.style.color = '#222';
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.background = 'transparent';
-          e.currentTarget.style.color = '#666';
-        }}
-      >
-        <Moon size={18} />
-      </button>
     </div>
   );
 }
