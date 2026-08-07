@@ -237,7 +237,7 @@ function Modal({ item, onClose }: { item: typeof achievements[0] | null; onClose
             borderRadius: 20,
             overflow: 'hidden',
             width: '100%',
-            maxWidth: 860,
+            maxWidth: 1100,
             maxHeight: '90vh',
             display: 'flex',
             flexDirection: hasPhotos ? undefined : 'column',
