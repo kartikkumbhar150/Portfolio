@@ -7,6 +7,9 @@ import allianz1 from '../assets/allianz.JPG';
 import allianz2 from '../assets/allianz2.JPG';
 import allianz3 from '../assets/allianz3.JPG';
 import allianz4 from '../assets/allianz4.JPG';
+import la1 from '../assets/la.jpeg';
+import la2 from '../assets/la2.jpeg';
+import la3 from '../assets/la3.jpeg';
 
 const achievements = [
   {
@@ -30,7 +33,7 @@ const achievements = [
     badge: { label: 'Runner-up', color: 'sky' },
     prize: '₹1,00,000',
     description: "Runner-Up – Technology Infusion Grand Challenge (TIGC) 2025 – Asia Level 🏆✨ organized by La Trobe University, Australia. Honored to share that our team was awarded a cash prize of ₹1,00,000 for our innovation and research contribution.🚀\n\nGrateful to be part of a platform that encourages student-led innovation, research, and real-world problem solving across Asia.\n\nProud to share this achievement with my amazing teammates Ajit Paraskar and Hitesh Khare.\n\nSpecial thanks to the TIGC organizers, Vijaylakshmi Suman, Diana Heatherich, and Dr. Aniruddha Desai, along with our college, Dr. D. Y. Patil Institute of Technology, Pimpri, Pune, for their constant guidance and support throughout this journey. Looking forward to creating more impactful solutions ahead! 🚀",
-    photos: [],
+    photos: [la1, la2, la3],
     link: null,
   },
   {
