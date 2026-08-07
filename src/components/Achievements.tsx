@@ -127,7 +127,7 @@ function AchievementCard({ item, onClick }: { item: typeof achievements[0]; onCl
             <img
               src={item.photos[0]}
               alt={item.title}
-              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+              style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
               onError={(e) => {
                 (e.target as HTMLImageElement).style.display = 'none';
               }}
@@ -159,7 +159,7 @@ function AchievementCard({ item, onClick }: { item: typeof achievements[0]; onCl
           <div style={{ display: 'flex', gap: 4, padding: '6px 12px 0', height: 36, overflow: 'hidden' }}>
             {item.photos.slice(1, 4).map((photo, i) => (
               <div key={i} style={{ width: 44, height: 28, borderRadius: 4, overflow: 'hidden', background: '#ede5d8', flexShrink: 0 }}>
-                <img src={photo} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'top' }}
+                <img src={photo} alt="" style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 20%' }}
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }} />
               </div>
             ))}
