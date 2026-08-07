@@ -10,6 +10,10 @@ import allianz4 from '../assets/allianz4.JPG';
 import la1 from '../assets/la.jpeg';
 import la2 from '../assets/la2.jpeg';
 import la3 from '../assets/la3.jpeg';
+import prakalp1 from '../assets/prakalp1.jpg';
+import prakalp2 from '../assets/prakalp2.jpg';
+import prakalp3 from '../assets/prakalp3.jpg';
+import prakalp4 from '../assets/prakalp4.jpg';
 
 const achievements = [
   {
@@ -43,9 +47,9 @@ const achievements = [
     location: 'Pune, India',
     date: '2025',
     badge: { label: '1st Prize', color: 'bronze' },
-    prize: null,
-    description: 'First prize at Prakalp 2025, an institution-level project competition, for developing an innovative AI-integrated web application.',
-    photos: [],
+    prize: '₹10,000',
+    description: "🚀 Exciting News! Our Smart Umbrella Project Wins 1st Prize! ☂️🏆\n\nWe are beyond thrilled to share that our Smart Umbrella project has secured 1st place at the Prakalp Project Presentation Competition held in JSPM Tathawade, winning a cash prize of ₹10,000! 🎉\n\n🌟 About Our Innovation:\nThis smart umbrella is designed to enhance daily convenience and safety with features like:\n✅ Automated Rain Notifications – Smart alerts to remind you to carry your umbrella when rain is expected, ensuring you’re always prepared.\n✅ Find My Umbrella – Real-time GPS tracking and Bluetooth connectivity to help you locate your umbrella instantly.\n✅ Ultrasonic Mist Maker – Built-in mist cooling system to regulate body temperature and prevent heat stroke on hot days.\n✅ Live Weather Monitoring – Displays real-time temperature, humidity, and weather conditions, keeping you informed on the go.\n✅ Solar-Powered & Smart Sensors – Eco-friendly design with solar panels for sustainable energy and smart automation for seamless operation.\n✅ UV Protection & Temperature Control – Special UV-resistant fabric and automated ventilation to keep you cool and protected from harmful rays. \n\nA huge thank you to our mentors for their invaluable guidance: Dr. Atul Kathole, Prof. Suvarna Patil, Harshvardhan Mohite and Gopal Kadam.\n\nAnd, of course, a big shoutout to our UmbrellaIQ Team:\n🌟 RAUNAK MISHRA\n🌟 Ashwini Marathe\n\n🚀 What’s Next?\n✨ It is a company sponsored project by Auriquant, Pune.\n✨ We have submitted our project for funding at La Trobe University, Australia.\n✨ Our patent has been filed and is currently under publication 📜\n✨ The copyright process for our innovation is also underway ✅\n\nThis is just the beginning! We are excited to take this technology even further and make a real impact. 💡\n\nOnwards and upwards! 🚀",
+    photos: [prakalp1, prakalp2, prakalp3, prakalp4],
     link: null,
   },
   {
