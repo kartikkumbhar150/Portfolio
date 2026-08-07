@@ -14,6 +14,8 @@ import prakalp1 from '../assets/prakalp1.jpg';
 import prakalp2 from '../assets/prakalp2.jpg';
 import prakalp3 from '../assets/prakalp3.jpg';
 import prakalp4 from '../assets/prakalp4.jpg';
+import morpheus1 from '../assets/morpheous.jpg';
+import morpheus2 from '../assets/morpheous2.jpg';
 
 const achievements = [
   {
@@ -60,8 +62,8 @@ const achievements = [
     date: '2025',
     badge: { label: 'Domain Master', color: 'sky' },
     prize: null,
-    description: 'Awarded Domain Master at the Morpheus National Level Hackathon for outstanding performance in the AI & Machine Learning domain.',
-    photos: [],
+    description: "Proud to share that we won Domain Master Title – EdTech at the 24-hour Morpheus Hackathon held at Sinhgad Institute of Technology, Lonavala. 🏆🚀\n\nAn intense 24 hours of innovation, teamwork, and learning. Truly grateful for this experience!\n\nBig shoutout to my amazing teammates Hariom Phulre and Devanshu Sharma for the incredible collaboration 🙌🔥",
+    photos: [morpheus1, morpheus2],
     link: null,
   },
   {
