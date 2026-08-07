@@ -256,7 +256,7 @@ function Modal({ item, onClose }: { item: typeof achievements[0] | null; onClose
                 <img
                   src={item.photos[activePhoto]}
                   alt={item.title}
-                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'contain' }}
                   onError={(e) => { (e.target as HTMLImageElement).style.display = 'none'; }}
                 />
                 <div style={{ position: 'absolute', bottom: 12, left: 12 }}>
