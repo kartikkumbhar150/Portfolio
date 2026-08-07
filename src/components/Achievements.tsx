@@ -343,7 +343,7 @@ export default function Achievements() {
   const [selected, setSelected] = useState<typeof achievements[0] | null>(null);
 
   return (
-    <section id="achievements" style={{ padding: 'clamp(5rem, 8vw, 8rem) clamp(1.25rem, 4vw, 2rem)' }}>
+    <section id="achievements" style={{ padding: 'clamp(2.5rem, 4vw, 4rem) clamp(1.25rem, 4vw, 2rem)' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <SectionHeader pill="Milestones" title="Hackathons, Awards & Recognition" pillColor="sky" />
         <div style={{

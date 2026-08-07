@@ -6,7 +6,7 @@ import FadeUp from './FadeUp';
 
 export default function Contact() {
   return (
-    <section id="contact" style={{ padding: 'clamp(5rem, 8vw, 8rem) clamp(1.25rem, 4vw, 2rem)' }}>
+    <section id="contact" style={{ padding: 'clamp(2.5rem, 4vw, 4rem) clamp(1.25rem, 4vw, 2rem)' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto', textAlign: 'center' }}>
         <FadeUp>
           <p style={{ fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: 'rgba(0,0,0,0.4)', marginBottom: '0.75rem', fontWeight: 500 }}>

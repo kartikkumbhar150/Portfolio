@@ -172,7 +172,7 @@ function ExperienceCard({ exp }: { exp: typeof experiences[0] }) {
 
 export default function Experience() {
   return (
-    <section id="experience" style={{ padding: 'clamp(5rem, 8vw, 8rem) clamp(1.25rem, 4vw, 2rem)' }}>
+    <section id="experience" style={{ padding: 'clamp(2.5rem, 4vw, 4rem) clamp(1.25rem, 4vw, 2rem)' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <SectionHeader pill="Experience" title="Work & Research" />
         <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>

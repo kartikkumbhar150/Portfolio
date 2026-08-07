@@ -30,7 +30,7 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <section id="skills" style={{ padding: 'clamp(5rem, 8vw, 8rem) clamp(1.25rem, 4vw, 2rem)' }}>
+    <section id="skills" style={{ padding: 'clamp(2.5rem, 4vw, 4rem) clamp(1.25rem, 4vw, 2rem)' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <SectionHeader pill="Skills" title="Technical Expertise" />
         <div style={{
