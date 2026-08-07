@@ -34,12 +34,6 @@ const experiences = [
     org: 'Auriquant Designs',
     location: 'Remote',
     period: 'Jan 2026 – Mar 2026',
-    headline: '40% faster API response with Redis caching',
-    stats: [
-      { value: '40%', label: 'Faster API Response' },
-      { value: '70%', label: 'Less Manual Ops' },
-      { value: 'Real-time', label: 'Order Tracking' },
-    ],
     bullets: [
       'Built cross-platform mobile app features using Flutter with a Spring Boot microservices backend, reducing API response time by 40%.',
       'Implemented RBAC and JWT-based authentication system, automating access control and reducing manual ops by 70%.',
