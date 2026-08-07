@@ -3,11 +3,12 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FlaskConical, Code2, ChevronDown, MapPin } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import FadeUp from './FadeUp';
+import latrobeLogo from '../assets/latrobe logo.png';
 
 const experiences = [
   {
     id: 'research',
-    icon: <FlaskConical size={22} color="#8F5A39" />,
+    icon: <img src={latrobeLogo} alt="La Trobe" style={{ width: 24, height: 24, objectFit: 'contain' }} />,
     accent: '#8F5A39',
     accentBg: '#F4EFE7',
     title: 'Research Project',
