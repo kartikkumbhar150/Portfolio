@@ -4,6 +4,7 @@ import { FlaskConical, Code2, ChevronDown, MapPin } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import FadeUp from './FadeUp';
 import latrobeLogo from '../assets/latrobe logo.png';
+import auriquantLogo from '../assets/auriquant_logo.jpg';
 
 const experiences = [
   {
@@ -26,7 +27,7 @@ const experiences = [
   },
   {
     id: 'internship',
-    icon: <Code2 size={22} color="#3E7EA6" />,
+    icon: <img src={auriquantLogo} alt="Auriquant" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />,
     accent: '#3E7EA6',
     accentBg: '#e8f4fb',
     title: 'Intern',
