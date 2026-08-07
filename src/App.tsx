@@ -1,4 +1,5 @@
 import Hero from './components/Hero';
+import Navbar from './components/Navbar';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Achievements from './components/Achievements';
@@ -11,6 +12,7 @@ import SectionDivider from './components/SectionDivider';
 export default function App() {
   return (
     <>
+      <Navbar />
       <main>
         <Hero />
         <SectionDivider />
