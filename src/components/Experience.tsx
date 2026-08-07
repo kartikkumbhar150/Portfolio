@@ -15,12 +15,6 @@ const experiences = [
     org: 'La Trobe University',
     location: 'Remote',
     period: 'Jan 2025 – Jan 2026',
-    headline: 'AI-powered early screening platform for learning disabilities',
-    stats: [
-      { value: 'Multimodal', label: 'Behavioral Analysis' },
-      { value: 'AI-Driven', label: 'Interventions' },
-      { value: 'Gamified', label: 'Experience' },
-    ],
     bullets: [
       'Developed an AI-powered early screening platform for detecting learning disabilities such as ADHD, Dyslexia, Dyscalculia, and Dysgraphia using multimodal behavioral analysis.',
       'Integrated EEG signals, eye-tracking, speech analysis, and gameplay interactions to extract cognitive and behavioral features for accurate disability assessment.',
@@ -98,14 +92,16 @@ function ExperienceCard({ exp }: { exp: typeof experiences[0] }) {
                 {exp.period}
               </span>
             </div>
-            <p style={{
-              margin: 0, fontSize: '0.875rem', fontWeight: 500,
-              color: exp.accent, background: `${exp.accent}12`,
-              display: 'inline-block', padding: '3px 10px', borderRadius: 9999,
-              border: `1px solid ${exp.accent}30`,
-            }}>
-              {exp.headline}
-            </p>
+            {exp.headline && (
+              <p style={{
+                margin: 0, fontSize: '0.875rem', fontWeight: 500,
+                color: exp.accent, background: `${exp.accent}12`,
+                display: 'inline-block', padding: '3px 10px', borderRadius: 9999,
+                border: `1px solid ${exp.accent}30`,
+              }}>
+                {exp.headline}
+              </p>
+            )}
           </div>
 
           <motion.div
@@ -132,29 +128,31 @@ function ExperienceCard({ exp }: { exp: typeof experiences[0] }) {
                 borderTop: '1px solid rgba(143,90,57,0.12)',
               }}>
                 {/* Stats grid */}
-                <div style={{
-                  display: 'grid',
-                  gridTemplateColumns: 'repeat(3, 1fr)',
-                  gap: '0.75rem',
-                  marginBottom: '1.25rem',
-                }}>
-                  {exp.stats.map((s) => (
-                    <div key={s.label} style={{
-                      background: '#F4EFE7',
-                      border: '1px solid rgba(143,90,57,0.12)',
-                      borderRadius: 10,
-                      padding: '0.85rem',
-                      textAlign: 'center',
-                    }}>
-                      <p style={{ fontWeight: 700, fontSize: '1.3rem', margin: '0 0 0.1rem', color: exp.accent }}>
-                        {s.value}
-                      </p>
-                      <p style={{ fontSize: '0.75rem', color: 'rgba(0,0,0,0.5)', margin: 0 }}>
-                        {s.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
+                {exp.stats && exp.stats.length > 0 && (
+                  <div style={{
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(3, 1fr)',
+                    gap: '0.75rem',
+                    marginBottom: '1.25rem',
+                  }}>
+                    {exp.stats.map((s) => (
+                      <div key={s.label} style={{
+                        background: '#F4EFE7',
+                        border: '1px solid rgba(143,90,57,0.12)',
+                        borderRadius: 10,
+                        padding: '0.85rem',
+                        textAlign: 'center',
+                      }}>
+                        <p style={{ fontWeight: 700, fontSize: '1.3rem', margin: '0 0 0.1rem', color: exp.accent }}>
+                          {s.value}
+                        </p>
+                        <p style={{ fontSize: '0.75rem', color: 'rgba(0,0,0,0.5)', margin: 0 }}>
+                          {s.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
 
                 {/* Bullets */}
                 <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
