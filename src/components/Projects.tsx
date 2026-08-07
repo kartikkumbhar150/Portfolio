@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { GitHubIcon } from './Icons';
 import { ExternalLink } from 'lucide-react';
 import FadeUp from './FadeUp';
+import SectionHeader from './SectionHeader';
 
 const projects = [
   {
@@ -43,40 +44,7 @@ export default function Projects() {
   return (
     <section id="projects" style={{ padding: 'clamp(2.5rem, 4vw, 4rem) clamp(1.25rem, 4vw, 2rem)' }}>
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-        {/* Custom header */}
-        <FadeUp>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '3rem', flexWrap: 'wrap', gap: '1rem' }}>
-            <div>
-              <span style={{
-                display: 'inline-block',
-                fontSize: 13, fontWeight: 600,
-                background: '#F4EFE7', color: '#8F5A39',
-                border: '1px solid rgba(143,90,57,0.3)',
-                borderRadius: 9999, padding: '4px 14px',
-                letterSpacing: '0.04em', textTransform: 'uppercase',
-                marginBottom: '0.75rem',
-              }}>
-                Projects
-              </span>
-              <h2 style={{
-                fontFamily: '"Playfair Display", Georgia, serif',
-                fontWeight: 700, fontSize: 'clamp(2rem, 4vw, 2.75rem)',
-                lineHeight: 1.1, margin: 0,
-              }}>
-                Featured Projects
-              </h2>
-            </div>
-            <a
-              href="https://github.com/kartikkumbhar150"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-secondary"
-              style={{ padding: '0.5rem 1.25rem', fontSize: '0.85rem', textDecoration: 'none', gap: '0.4rem' }}
-            >
-              <GitHubIcon size={15} /> View All
-            </a>
-          </div>
-        </FadeUp>
+        <SectionHeader pill="Projects" title="Featured Projects" />
 
         <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
           {projects.map((p) => (
