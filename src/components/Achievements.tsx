@@ -116,10 +116,10 @@ function AchievementCard({ item, onClick }: { item: typeof achievements[0]; onCl
   const badge = badgeStyles(item.badge.color);
 
   return (
-    <FadeUp>
+    <FadeUp className="h-full">
       <motion.div
         className="card-surface"
-        style={{ overflow: 'hidden', cursor: 'pointer' }}
+        style={{ overflow: 'hidden', cursor: 'pointer', height: '100%', display: 'flex', flexDirection: 'column' }}
         onClick={onClick}
         whileHover={{ y: -3 }}
         transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
@@ -175,7 +175,7 @@ function AchievementCard({ item, onClick }: { item: typeof achievements[0]; onCl
           </div>
         )}
 
-        <div style={{ padding: '1rem 1.25rem 1.25rem' }}>
+        <div style={{ padding: '1rem 1.25rem 1.25rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
           <h3 style={{
             fontFamily: '"Playfair Display", Georgia, serif',
             fontWeight: 700, fontSize: '1rem', margin: '0 0 0.25rem', lineHeight: 1.3,
