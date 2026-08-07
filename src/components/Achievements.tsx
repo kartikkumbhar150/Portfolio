@@ -3,18 +3,22 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Trophy, X, ExternalLink, MapPin, Calendar } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import FadeUp from './FadeUp';
+import allianz1 from '../assets/allianz.JPG';
+import allianz2 from '../assets/allianz2.JPG';
+import allianz3 from '../assets/allianz3.JPG';
+import allianz4 from '../assets/allianz4.JPG';
 
 const achievements = [
   {
     id: 'allianz',
     title: 'Allianz Tech Championship 2025',
     org: 'Allianz SE',
-    location: 'Munich, Germany',
+    location: 'India',
     date: '2025',
     badge: { label: 'Winner', color: 'bronze' },
     prize: '€3,000',
     description: "Winner – Allianz India Technology Championship 2025\n\nI'm incredibly honored to share that I have been declared the Winner of the Allianz India Technology Championship 2025, held at the Allianz Technology R&D Center, Pune. Receiving this prestigious recognition along with a €3000 scholarship marks a significant milestone in my journey of innovation and technology.\n\nI sincerely thank Dr. Dheeraj Agrawal Sir and the dedicated TPO Team of Dr. D. Y. Patil Institute of Technology, Pimpri, Pune for their visionary mentorship and constant encouragement. Your belief in our potential empowers us to step onto global platforms with confidence.\n\nA special thanks to Allianz Technology for creating a championship that recognizes innovation purely on talent, impact, and technical excellence. Being selected among a limited number of top colleges in India makes this achievement even more meaningful.\n\nWhat made this moment truly unforgettable was Allianz Technology's beautiful gesture of inviting my parents to the award ceremony. Sharing the stage with them transformed this achievement into a lifelong memory filled with pride, gratitude, and emotion.\n\nExcited to keep building, innovating, and pushing boundaries.",
-    photos: ['/allianz.JPG', '/allianz2.jpg', '/allianz3.jpg', '/allianz4.jpg'],
+    photos: [allianz1, allianz2, allianz3, allianz4],
     link: null,
   },
   {
