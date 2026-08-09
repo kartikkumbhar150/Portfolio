@@ -18,19 +18,32 @@ export default function TextRotate({ words, interval = 2500, className = '', pil
     return () => clearInterval(timer);
   }, [words, interval]);
 
+  const currentWords = words[index].split(' ');
+
   const content = (
     <AnimatePresence mode="wait">
-      <motion.span
+      <motion.div
         key={index}
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -12 }}
-        transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
         className={pillStyle ? '' : className}
         style={{ display: 'inline-block' }}
+        exit={{ opacity: 0, y: -12, transition: { duration: 0.25 } }}
       >
-        {words[index]}
-      </motion.span>
+        {currentWords.map((word, i) => (
+          <motion.span
+            key={i}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.4,
+              ease: [0.22, 1, 0.36, 1],
+              delay: i * 0.1, // stagger by word
+            }}
+            style={{ display: 'inline-block', marginRight: i < currentWords.length - 1 ? '0.25em' : 0 }}
+          >
+            {word}
+          </motion.span>
+        ))}
+      </motion.div>
     </AnimatePresence>
   );
 
@@ -42,12 +55,12 @@ export default function TextRotate({ words, interval = 2500, className = '', pil
           display: 'inline-flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: '#A6D7F0',
-          color: '#000',
+          background: '#ede5d8',
+          color: '#8F5A39',
+          border: '1px solid rgba(143,90,57,0.2)',
           borderRadius: 9999,
-          padding: '2px 14px',
-          fontWeight: 500,
-          minWidth: '260px',
+          padding: '6px 20px',
+          minWidth: '280px',
           overflow: 'hidden',
         }}
       >

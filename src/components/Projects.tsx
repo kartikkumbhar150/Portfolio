@@ -46,17 +46,17 @@ export default function Projects() {
       <div style={{ maxWidth: 1200, margin: '0 auto' }}>
         <SectionHeader pill="Projects" title="Featured Projects" />
 
-        <div style={{ maxWidth: 860, margin: '0 auto', display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+        <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((p) => (
-            <FadeUp key={p.id}>
-              <div className="card-surface" style={{ overflow: 'hidden' }}>
+            <FadeUp key={p.id} className="flex h-full w-full">
+              <div className="card-surface flex flex-col w-full" style={{ overflow: 'hidden' }}>
                 {/* Accent gradient bar */}
                 <div style={{
                   height: 3,
                   background: `linear-gradient(90deg, ${p.accent}, ${p.accentLight})`,
                 }} />
 
-                <div style={{ padding: '1.75rem 2rem' }}>
+                <div style={{ padding: '1.5rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
                   {/* Header */}
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
                     <div>
@@ -97,7 +97,7 @@ export default function Projects() {
                   </ul>
 
                   {/* Tech tags */}
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: 'auto' }}>
                     {p.tags.map((tag) => (
                       <span key={tag} className="tech-tag" style={{ padding: '3px 10px' }}>
                         {tag}

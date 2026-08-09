@@ -70,7 +70,7 @@ export default function Hero() {
               words={['Full Stack Developer', 'AI & ML Engineer', 'Hackathon Winner', 'Research Contributor']}
               pillStyle
               interval={2800}
-              className="text-base font-medium"
+              className="text-lg font-semibold"
             />
           </motion.div>
 
@@ -81,13 +81,7 @@ export default function Hero() {
             maxWidth: 520,
             marginBottom: '2rem',
           }}>
-            Computer Engineering student at{' '}
-            <strong style={{ color: '#000', fontWeight: 600 }}>Dr. D. Y. Patil Institute of Technology, Pune</strong>
-            {' '}building with{' '}
-            <strong style={{ color: '#000', fontWeight: 600 }}>React, Spring Boot, and AI/ML</strong>
-            {' '}— a{' '}
-            <strong style={{ color: '#8F5A39', fontWeight: 600 }}>national &amp; international hackathon winner</strong>
-            {' '}and published researcher.
+            Hey, I&apos;m Kartik Kumbhar. I&apos;m a Computer Engineering student, developer, and innovator who enjoys building AI-powered products, experimenting with new technologies, and turning ambitious ideas into working solutions.
           </motion.p>
 
           {/* CTA Buttons */}
