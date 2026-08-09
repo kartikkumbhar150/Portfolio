@@ -3,6 +3,7 @@ import { Phone, Mail, Send } from 'lucide-react';
 import TextRotate from './TextRotate';
 import { GitHubIcon, LinkedInIcon } from './Icons';
 import meJpg from '../assets/me.jpg';
+import resumePdf from '../assets/Kartik_Kumbhar_Resume.pdf';
 
 const stagger = {
   container: {
@@ -100,7 +101,7 @@ export default function Hero() {
               Contact Me
             </a>
             <a
-              href="/kartik-kumbhar-resume.pdf"
+              href={resumePdf}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"

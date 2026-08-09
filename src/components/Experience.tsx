@@ -6,7 +6,21 @@ import FadeUp from './FadeUp';
 import latrobeLogo from '../assets/latrobe logo.png';
 import auriquantLogo from '../assets/auriquant_logo.jpg';
 
-const experiences = [
+type ExperienceItem = {
+  id: string;
+  icon: React.ReactNode;
+  accent: string;
+  accentBg: string;
+  title: string;
+  org: string;
+  location: string;
+  period: string;
+  headline?: string;
+  bullets: string[];
+  stats?: { label: string; value: string }[];
+};
+
+const experiences: ExperienceItem[] = [
   {
     id: 'research',
     icon: <img src={latrobeLogo} alt="La Trobe" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />,
@@ -42,7 +56,7 @@ const experiences = [
   },
 ];
 
-function ExperienceCard({ exp }: { exp: typeof experiences[0] }) {
+function ExperienceCard({ exp }: { exp: ExperienceItem }) {
   const [open, setOpen] = useState(false);
 
   return (
