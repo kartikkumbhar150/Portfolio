@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
 import { Phone, Mail, Send } from 'lucide-react';
 import TextRotate from './TextRotate';
-import { GitHubIcon, LinkedInIcon } from './Icons';
+import { GitHubIcon, LinkedInIcon, CodolioIcon } from './Icons';
 import meJpg from '../assets/me.jpg';
-import resumePdf from '../assets/Kartik_Kumbhar_Resume.pdf';
 
 const stagger = {
   container: {
@@ -95,7 +94,7 @@ export default function Hero() {
               Contact Me
             </a>
             <a
-              href={resumePdf}
+              href="/Kartik_Kumbhar_Resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"
@@ -141,6 +140,16 @@ export default function Hero() {
                 aria-label="LinkedIn"
               >
                 <LinkedInIcon size={17} />
+              </a>
+              <a
+                href="https://codolio.com/profile/kartikkumbhar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="social-icon"
+                style={{ width: 36, height: 36 }}
+                aria-label="Codolio"
+              >
+                <CodolioIcon size={17} />
               </a>
             </div>
           </motion.div>
