@@ -23,13 +23,13 @@ const projects = [
     tags: ['Python', 'Flask', 'Chrome Extension', 'ESG Analytics', 'Generative AI'],
   },
   {
-    id: 'hirex',
+    id: 'networq',
     title: 'HireX',
     subtitle: 'AI-Powered Recruitment & Matching Platform',
     accent: '#3E7EA6',
     accentLight: '#6aaecf',
     links: [
-      { label: 'GitHub', icon: <GitHubIcon size={14} />, href: 'https://github.com/kartikkumbhar150/hirex' },
+      { label: 'GitHub', icon: <GitHubIcon size={14} />, href: 'https://github.com/kartikkumbhar150/Networq' },
     ],
     bullets: [
       'Full-stack recruitment platform with semantic search using Qdrant vector database for intelligent candidate-job matching powered by AI embeddings.',
