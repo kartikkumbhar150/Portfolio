@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FlaskConical, Code2, ChevronDown, MapPin } from 'lucide-react';
 import SectionHeader from './SectionHeader';
 import FadeUp from './FadeUp';
-import latrobeLogo from '../assets/lt_logo.png';
+import latrobeLogo from '../assets/latrobeLogo';
 import auriquantLogo from '../assets/auriquant_logo.jpg';
 
 type ExperienceItem = {
